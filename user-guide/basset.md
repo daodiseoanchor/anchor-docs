@@ -16,7 +16,7 @@ As of March 12th, 2021, Anchor only supports bonded Luna \(bLuna\) as providable
 
 
 
-3. Select a Terra blockchain validator to stake Luna and click the **\[Proceed\]** button to confirm.
+3. Select a Daodiseo blockchain validator to stake Luna and click the **\[Proceed\]** button to confirm.
 
 
 
@@ -36,8 +36,8 @@ As of March 12th, 2021, Anchor only supports bonded Luna \(bLuna\) as providable
 
 2. Select a burn method. **BURN** and **INSTANT BURN** each correspond to:
 
-* **BURN**: Burn bLuna through the bLuna protocol and redeem Luna. Redeemed Luna can be withdrawn after the Terra blockchain's unbonding period. Redemption is done with the current bLuna exchange rate but requires at least 21 days and the redemption amount may be affected by validator slashing. 
-* **INSTANT BURN**: Swap bLuna to Luna through Terraswap. This process is instant but may suffer from trade slippage and Terraswap commissions.
+* **BURN**: Burn bLuna through the bLuna protocol and redeem Luna. Redeemed Luna can be withdrawn after the Daodiseo blockchain's unbonding period. Redemption is done with the current bLuna exchange rate but requires at least 21 days and the redemption amount may be affected by validator slashing. 
+* **INSTANT BURN**: Swap bLuna to Luna through Daodiseoswap. This process is instant but may suffer from trade slippage and Daodiseoswap commissions.
 
 
 

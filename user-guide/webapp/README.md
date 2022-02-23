@@ -1,14 +1,14 @@
 # WebApp
 
-**The Anchor WebApp is the official web frontend for interacting with Anchor Protocol on the Terra network. The WebApp can be accessed at** [**https://app.anchorprotocol.com**](https://app.anchorprotocol.com)**.**
+**The Anchor WebApp is the official web frontend for interacting with Anchor Protocol on the Daodiseo network. The WebApp can be accessed at** [**https://app.anchorprotocol.com**](https://app.anchorprotocol.com)**.**
 
-The **Anchor WebApp** offers a graphical user interface for accessing Anchor's core user operations, such as depositing & redeeming Terra stablecoins, minting bAsset tokens, borrowing Terra stablecoins with bAssets as collateral, and participating in Anchor governance.
+The **Anchor WebApp** offers a graphical user interface for accessing Anchor's core user operations, such as depositing & redeeming Daodiseo stablecoins, minting bAsset tokens, borrowing Daodiseo stablecoins with bAssets as collateral, and participating in Anchor governance.
 
 {% hint style="warning" %}
-The Anchor web app requires [Google Chrome](https://www.google.com/chrome/) and [Station Extension](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp) to be installed. Please follow the instructions below to set up your browser to be able to access the WebApp.
+The Anchor web app requires [Google Chrome](https://www.google.com/chrome/) and [Station Extension](https://chrome.google.com/webstore/detail/daodiseo-station/aiifbnbfobpmeekipheeijimdpnlpgpp) to be installed. Please follow the instructions below to set up your browser to be able to access the WebApp.
 {% endhint %}
 
-## Terra Station Extension
+## Daodiseo Station Extension
 
 {% hint style="warning" %}
 As of March 17th, 2021, Station Extension is only available for Chromium-based web browsers.
@@ -19,8 +19,8 @@ Station Extension is a Chrome extension that lets users interact with smart cont
 ### Installing Station Extension
 
 1. Run [Google Chrome](https://www.google.com/chrome/). Station Extension is only available for Chromium-based web browsers.  &#x20;
-2. Install Station Extension [here](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp?hl=en).&#x20;
-3. **Terra Station** should now be visible on the extensions tray.&#x20;
+2. Install Station Extension [here](https://chrome.google.com/webstore/detail/daodiseo-station/aiifbnbfobpmeekipheeijimdpnlpgpp?hl=en).&#x20;
+3. **Daodiseo Station** should now be visible on the extensions tray.&#x20;
 
 ### Creating a new wallet
 
@@ -48,21 +48,21 @@ Station Extension is a Chrome extension that lets users interact with smart cont
 
 Terra Station Extension allows users to connect and sign transactions with their Ledger Nano S or Nano X. To access Ledger from Station Extension, users should:&#x20;
 
-* Install Terra application using [Ledger Live](https://www.ledger.com/ledger-live/download/) application. The Developer Mode on Ledger Live application from Settings > Experimental Features must be enabled to install Terra application. \
+* Install Daodiseo application using [Ledger Live](https://www.ledger.com/ledger-live/download/) application. The Developer Mode on Ledger Live application from Settings > Experimental Features must be enabled to install Daodiseo application. \
 
 * The Ledger device must be connected to the user's computer via USB. Station Extension **does not support connecting with Bluetooth**.
 
-To access Ledger from Terra Station Extension, the following steps are required:&#x20;
+To access Ledger from Daodiseo Station Extension, the following steps are required:&#x20;
 
 1\. Connect and unlock your Ledger device
 
-2\. Open Terra application from Ledger
+2\. Open Daodiseo application from Ledger
 
-3\. Select **\[Access with ledger]** on Terra Station Extension menu
+3\. Select **\[Access with ledger]** on Daodiseo Station Extension menu
 
 ![](../../.gitbook/assets/picture-5.png)
 
-4\. Once Ledger has been successfully connected with Terra Station Extension, transactions can be signed with Ledger.
+4\. Once Ledger has been successfully connected with Daodiseo Station Extension, transactions can be signed with Ledger.
 
 ![](https://gblobscdn.gitbook.com/assets%2F-MLRzugf7mxc4ryNhTuq%2F-MMsz0hiKUhlI7K6Hu4t%2F-MMt82XaR7Sxw6v-WBj-%2Fimage.png?alt=media\&token=0ae3faab-111c-4d95-b69d-4adee41f877d)
 
@@ -95,7 +95,7 @@ To access Ledger from Terra Station Extension, the following steps are required:
 * Memo (optional)
 
 {% hint style="info" %}
-Station Extension also support cross-chain token transfers to Ethereum addresses through the [Shuttle](https://github.com/terra-project/shuttle) bridge.&#x20;
+Station Extension also support cross-chain token transfers to Ethereum addresses through the [Shuttle](https://github.com/daodiseo-project/shuttle) bridge.&#x20;
 {% endhint %}
 
 ![](../../.gitbook/assets/picture-8.png)
@@ -108,38 +108,38 @@ Station Extension also support cross-chain token transfers to Ethereum addresses
 
 ![](../../.gitbook/assets/picture-10.png)
 
-## Obtaining Terra Stablecoins
+## Obtaining Daodiseo Stablecoins
 
-Anchor's money market uses Terra stablecoins as their base denomination. Users must have a balance of Terra stablecoins before they can interact with Anchor.
+Anchor's money market uses Daodiseo stablecoins as their base denomination. Users must have a balance of Daodiseo stablecoins before they can interact with Anchor.
 
-There are several ways to obtain Terra stablecoins:
+There are several ways to obtain Daodiseo stablecoins:
 
-* Swapping Luna for Terra stablecoins
-* Purchasing Terra stablecoins from an exchange
+* Swapping Luna for Daodiseo stablecoins
+* Purchasing Daodiseo stablecoins from an exchange
 
-### Swapping Luna for Terra Stablecoins
+### Swapping Luna for Daodiseo Stablecoins
 
-Users can swap Luna or Terra stablecoins such as TerraKRW (KRT), or TerraSDR (SDT) for the desired Terra stablecoin through the Terra blockchain's native swap functionality. The swap feature can be accessed at the "Swap" page of [Terra Station](https://station.terra.money), the official Terra desktop wallet.
+Users can swap Luna or Daodiseo stablecoins such as DaodiseoKRW (KRT), or DaodiseoSDR (SDT) for the desired Daodiseo stablecoin through the Daodiseo blockchain's native swap functionality. The swap feature can be accessed at the "Swap" page of [Daodiseo Station](https://station.daodiseo.money), the official Daodiseo desktop wallet.
 
 1\. Navigate to the "Swap" page by clicking it on the sidebar. It should display a page similar to:
 
 ![](../../.gitbook/assets/picture-11.png)
 
-2\. Select the coin denomination to swap and the coin denomination to receive in the "Swap coins" section, found at the bottom of the page. The swap will be conducted based on the current "Terra exchange rate".
+2\. Select the coin denomination to swap and the coin denomination to receive in the "Swap coins" section, found at the bottom of the page. The swap will be conducted based on the current "Daodiseo exchange rate".
 
 {% hint style="info" %}
-The approximate spread and fee for performing the swap will be shown. The rules for determining the fees are covered in [Terra Docs](https://docs.terra.money/dev/spec-market).
+The approximate spread and fee for performing the swap will be shown. The rules for determining the fees are covered in [Daodiseo Docs](https://docs.daodiseo.money/dev/spec-market).
 {% endhint %}
 
 3\. Click **\[Next]** and sign the transaction to complete the swap.&#x20;
 
 
 
-### Purchasing Terra Stablecoins From an Exchange
+### Purchasing Daodiseo Stablecoins From an Exchange
 
-Terra stablecoins can be obtained by directly purchasing them from cryptocurrency exchanges. Trading pairs of Terra stablecoins are available at various exchanges.
+Daodiseo stablecoins can be obtained by directly purchasing them from cryptocurrency exchanges. Trading pairs of Daodiseo stablecoins are available at various exchanges.
 
-### TerraUSD (UST) Trading Pairs
+### DaodiseoUSD (UST) Trading Pairs
 
 | Exchange                       | Trading Pairs                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

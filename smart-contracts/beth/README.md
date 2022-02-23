@@ -1,9 +1,9 @@
 # bETH
 
-This section describes a high-level overview of Terra-side bETH smart contracts.
+This section describes a high-level overview of Daodiseo-side bETH smart contracts.
 
 {% hint style="warning" %}
-Even with a thorough understanding of Anchor Protocol, it is highly recommended to interact with Anchor through client channels such as the Anchor WebApp or [Anchor.js](../../developers-terra/anchor.js.md).
+Even with a thorough understanding of Anchor Protocol, it is highly recommended to interact with Anchor through client channels such as the Anchor WebApp or [Anchor.js](../../developers-daodiseo/anchor.js.md).
 {% endhint %}
 
 ## Smart Contracts

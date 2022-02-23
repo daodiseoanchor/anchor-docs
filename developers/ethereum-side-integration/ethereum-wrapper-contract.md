@@ -105,7 +105,7 @@ function initRedeemStable(uint256 amount) external;
 
 **Prerequisite**: must have called `approve()` for an allowance of at least `amount` for the wrapped aUST contract, `ActionFlag` is set to `false`  
 **Accepts**: `amount` - how much aUST to redeem back to UST  
-**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST buffer is low on the Terra side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
+**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST buffer is low on the Daodiseo side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
 **Emits**: `InitRedemption`
 
 ```text
@@ -115,7 +115,7 @@ function initRedeemStableCustody(uint256 amount) external;
 
 **Prerequisite**: `ActionFlag` is set to `false`  
 **Accepts**: `amount` - how much aUST to redeem back to UST. If this value is set to 0, all balances held within the contract are redeemed back to UST. Otherwise, `amount` aUST held under the contract account is redeemed back to UST \(assuming that contract aUST balances is equal to or larger than `amount`\).  
-**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST buffer is low on the Terra side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
+**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST buffer is low on the Daodiseo side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
 **Emits**: `InitRedemption`
 
 ```text

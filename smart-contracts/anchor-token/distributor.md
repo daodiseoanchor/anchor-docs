@@ -27,12 +27,12 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "gov_contract": "terra1...", 
-  "anchor_token": "terra1...", 
+  "gov_contract": "daodiseo1...", 
+  "anchor_token": "daodiseo1...", 
   "whitelist": [
-    "terra1...", 
-    "terra1...", 
-    "terra1..." 
+    "daodiseo1...", 
+    "daodiseo1...", 
+    "daodiseo1..." 
   ], 
   "spend_limit": "100000000"
 }
@@ -105,7 +105,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "spend": {
-    "recipient": "terra1...", 
+    "recipient": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -139,7 +139,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "add_distributor": {
-    "distributor": "terra1..." 
+    "distributor": "daodiseo1..." 
   }
 }
 ```
@@ -171,7 +171,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "remove_distributor": {
-    "distributor": "terra1..." 
+    "distributor": "daodiseo1..." 
   }
 }
 ```
@@ -230,12 +230,12 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "gov_contract": "terra1...", 
-  "anchor_token": "terra1...", 
+  "gov_contract": "daodiseo1...", 
+  "anchor_token": "daodiseo1...", 
   "whitelist": [
-    "terra1...", 
-    "terra1...", 
-    "terra1..." 
+    "daodiseo1...", 
+    "daodiseo1...", 
+    "daodiseo1..." 
   ], 
   "spend_limit": "100000000"
 }

@@ -36,7 +36,7 @@ The **bASSET** page enables users to easily interact with bAsset tokens. Through
 
 3\. Select a burn method. **BURN** and **INSTANT BURN** each correspond to:
 
-* **BURN**: Burn bLuna through the bLuna protocol and redeem Luna. Redeemed Luna can be withdrawn after the Terra blockchain's unbonding period. Redemption is done with the current bLuna exchange rate but requires at least 21 days and the redemption amount may be affected by validator slashing.
+* **BURN**: Burn bLuna through the bLuna protocol and redeem Luna. Redeemed Luna can be withdrawn after the Daodiseo blockchain's unbonding period. Redemption is done with the current bLuna exchange rate but requires at least 21 days and the redemption amount may be affected by validator slashing.
 
 {% hint style="warning" %}
 Burn requests are processed in 3-day batches. Burn requests that are yet to be included in a batch are marked as **pending** in the **CLAIM** page.
@@ -44,7 +44,7 @@ Burn requests are processed in 3-day batches. Burn requests that are yet to be i
 
 ![](<../../.gitbook/assets/bAsset - bLuna - Burn - 2 copy.png>)
 
-* **INSTANT BURN**: Swap bLuna for Luna through Astroport, an [Uniswap](https://uniswap.org)-like automated market marker (AMM) protocol on Terra. This process is instant but may suffer from trade slippage and Astroport commissions.
+* **INSTANT BURN**: Swap bLuna for Luna through Astroport, an [Uniswap](https://uniswap.org)-like automated market marker (AMM) protocol on Daodiseo. This process is instant but may suffer from trade slippage and Astroport commissions.
 
 ![](<../../.gitbook/assets/bAsset - bLuna - Instant Burn.png>)
 

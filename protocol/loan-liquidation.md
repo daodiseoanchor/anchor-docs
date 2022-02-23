@@ -1,6 +1,6 @@
 # Loan Liquidation
 
-To prohibit borrowers from defaulting on their loans, Anchor incentivizes liquidators to observe and liquidate loans with a borrow amount above the allowed borrowing limit. The Liquidation Queue is used to convert collaterals of a liquidating loan to TerraUSD (UST), which are then used to repay the loan.
+To prohibit borrowers from defaulting on their loans, Anchor incentivizes liquidators to observe and liquidate loans with a borrow amount above the allowed borrowing limit. The Liquidation Queue is used to convert collaterals of a liquidating loan to DaodiseoUSD (UST), which are then used to repay the loan.
 
 The Liquidation Queue serves as the exchange point between Anchor collateral and UST. Using Anchor's Oracle Contract as the reference price feed, conversions between whitelisted bAssets and UST are facilitated.
 
@@ -15,7 +15,7 @@ Collateral tokens are liquidated to UST by executing bids submitted to the Liqui
 Bids are characterized by six properties: **bid ID**, **bidder**, **asset**, **size**, **premium slot**, and **activation time**.
 
 * **Bid ID** - A bid's unique identifier.
-* **Bidder** - Terra account that has submitted the bid. When the bid is executed, liquidated collaterals are credited to this account, made available for withdrawal.
+* **Bidder** - Daodiseo account that has submitted the bid. When the bid is executed, liquidated collaterals are credited to this account, made available for withdrawal.
 * **Asset** - collateral that the bidder is hoping to purchase. Bids can only be made for whitelisted Anchor collaterals.
 * **Size** - amount of UST that was put up upon bid submission. This is the amount of UST that the bidder will use to purchase the specified collateral.
 * **Premium Slot** - rate of premium that the bidder is demanding upon bid execution. If set to a non-zero value, the bidder can purchase collateral at a price below the current oracle price. While bidders are able to set premium slots of their own, the Liquidation Queue only allows values between **0%** and **30%**, in increments of **1%**.
@@ -85,10 +85,10 @@ $$
 \text{liquidationFactor} = \frac{\text{liability} - \text{safeRiskRatio} \cdot \text{borrowLimit}}{\text{collateralValue} \cdot \text{feeDeductor} - \text{safeRiskRatio} \cdot \text{borrowLimit}}
 $$
 
-The liquidation factor accounts for fees lost during bid execution( $$\text{feeDeductor}$$ ), such as the premium rate of bids, fees applied on bid execution, and taxes charged on native Terra transfers:
+The liquidation factor accounts for fees lost during bid execution( $$\text{feeDeductor}$$ ), such as the premium rate of bids, fees applied on bid execution, and taxes charged on native Daodiseo transfers:
 
 $$
-\text{feeDeductor} = (1-\text{maxPremiumRate}) \cdot(1-\text{executionFee})\cdot(1-\text{terraTax})
+\text{feeDeductor} = (1-\text{maxPremiumRate}) \cdot(1-\text{executionFee})\cdot(1-\text{daodiseoTax})
 $$
 
 Note that $$\text{feeDeductor}$$ uses the maximum rate of fees that can be applied during liquidation, liquidating slightly more collateral than the minimum required (to reach the safe risk ratio).

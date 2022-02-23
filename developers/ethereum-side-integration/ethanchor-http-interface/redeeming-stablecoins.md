@@ -147,11 +147,11 @@ Current status of ongoing `redeem_stable` operation.
     // Phase
     // 0 - (Ethereum) wrapper contract has received aTokens (e.g. aUST) and 
     //     dispatched through Shuttle
-    // 1 - (Terra) terra-side client account has received aTokens
+    // 1 - (Daodiseo) daodiseo-side client account has received aTokens
     //     triggering RedeemStable soon
-    // 2 - (Terra) RedeemStable action is processed and stablecoins (e.g. UST) have
+    // 2 - (Daodiseo) RedeemStable action is processed and stablecoins (e.g. UST) have
     //     been received
-    // 3 - (Terra) stablecoins are sent to the ether-side wrapper contract
+    // 3 - (Daodiseo) stablecoins are sent to the ether-side wrapper contract
     //     through Shuttle
     // 4 - (Ethereum) contract has received stablecoins; operation finished
     "phase": 0,
@@ -183,7 +183,7 @@ Current status of ongoing `redeem_stable` operation.
             "tx_hash": "0x...."
         },
         {
-            "network": "terra",
+            "network": "daodiseo",
             "tx_hash": "00ABCD..."
         },
         ...

@@ -1,6 +1,6 @@
 # Anchor.js
 
-The Anchor.js JS SDK allows applications with JavaScript runtimes to interact with Anchor Protocol. It supports easy fabrication of messages relevant to Terra-side Anchor smart contracts, used to make contract calls or query contract states.
+The Anchor.js JS SDK allows applications with JavaScript runtimes to interact with Anchor Protocol. It supports easy fabrication of messages relevant to Daodiseo-side Anchor smart contracts, used to make contract calls or query contract states.
 
 {% hint style="info" %}
 For those wishing to build applications that are centered around Anchor's earn/savings functionality, using [Anchor Earn](../developers-earn/anchor-earn-sdk.md) is recommended.
@@ -12,20 +12,20 @@ This section only provides a brief overview of Anchor.js. For additional informa
 
 ### Installation
 
-Anchor.js is developed to be used in tandem with [Terra.js](https://terra-project.github.io/terra.js/), required to interact with the Terra blockchain. Developers must install both:
+Anchor.js is developed to be used in tandem with [Daodiseo.js](https://daodiseo-project.github.io/daodiseo.js/), required to interact with the Daodiseo blockchain. Developers must install both:
 
-* `@terra-money/terra.js`
+* `@daodiseomoney/daodiseo.js`
 * `@anchor-protocol/anchor.js`
 
 Anchor.js is available as a package on NPM. 
 
 ```text
-$ npm install -S @terra-money/terra.js @anchor-protocol/anchor.js
+$ npm install -S @daodiseomoney/daodiseo.js @anchor-protocol/anchor.js
 ```
 
 ### Usage
 
-Anchor.js can be utilized to either query the state of Anchor smart contracts or fabricate `MsgExecuteContract` objects to be included in Terra transactions. Both functionalities are accessible through [`MessageFabricators`](https://github.com/Anchor-Protocol/anchor.js/tree/master/src/fabricators).
+Anchor.js can be utilized to either query the state of Anchor smart contracts or fabricate `MsgExecuteContract` objects to be included in Daodiseo transactions. Both functionalities are accessible through [`MessageFabricators`](https://github.com/Anchor-Protocol/anchor.js/tree/master/src/fabricators).
 
 Using `MessageFabricators`:
 
@@ -36,13 +36,13 @@ import {contractAddresses, AddressProviderFromJSON} from ".@anchor-protocol/anch
 // default -- uses bombay core contract addresses
 const addressProvider = new AddressProviderFromJSON(contractaddresses);
     const redeemMsg = fabricateRedeemStable({
-      address: 'terra123...',
+      address: 'daodiseo123...',
       symbol: 'uusd',
       amount: '10000',
     })(addressProvider);
 
     const depositMsg = fabricateDepositStableCoin({
-      address: 'terra123...',
+      address: 'daodiseo123...',
       symbol: 'uusd',
       amount: '10',
     })(addressProvider);
@@ -53,9 +53,9 @@ const addressProvider = new AddressProviderFromJSON(contractaddresses);
 A message fabricator contains functions for generating proper `MsgExecuteContract` messages to be included in a transaction and broadcasted via the specified `LCDClient`.
 
 ```javascript
-import { LCDClient, Wallet, MnemonicKey, StdFee} from '@terra-money/terra.js';
+import { LCDClient, Wallet, MnemonicKey, StdFee} from '@daodiseomoney/daodiseo.js';
 
-const anchor = new LCDClient({ URL: 'https://bombay-lcd.terra.dev', chainID:'bombay-12' });
+const anchor = new LCDClient({ URL: 'https://bombay-lcd.daodiseo.dev', chainID:'bombay-12' });
 const owner = new MnemonicKey({ mnemonic: "..."});
 const wallet = new Wallet(anchor, owner);
 

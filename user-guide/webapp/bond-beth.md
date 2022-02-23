@@ -1,20 +1,20 @@
 # bASSET \[bETH]
 
-Minting and redeeming bETH is a cross-chain operation, requiring interactions from both the Ethereum and Terra blockchain. The below web interfaces are used to achieve certain types of actions on corresponding blockchains.
+Minting and redeeming bETH is a cross-chain operation, requiring interactions from both the Ethereum and Daodiseo blockchain. The below web interfaces are used to achieve certain types of actions on corresponding blockchains.
 
 * [Lido's stETH WebApp](https://stake.lido.fi) - for minting stETH using ETH
 * [Lido's bETH WebApp](https://anchor.lido.fi) - for minting and redeeming bETH using stETH
 * [Wormhole Bridge WebApp's Redeem Page](https://wormholebridge.com/#/redeem) - for redeeming tokens transferred over via Wormhole
 * [Anchor WebApp's BOND page](https://app.anchorprotocol.com/bond/claim) - for claiming bETH rewards
-* [Wormhole Bridge WebApp](https://wormholebridge.com) - for transferring bETH to/from Ethereum from/to Terra
+* [Wormhole Bridge WebApp](https://wormholebridge.com) - for transferring bETH to/from Ethereum from/to Daodiseo
 * [Curve's WebApp](https://curve.fi) - for swapping stETH for ETH
 
 
 
 {% hint style="info" %}
-Due to Wormhole's inability of generating custom CW20 tokens (required for bETH's reward-accruing features), there exists 2 bETH tokens on Terra:&#x20;
+Due to Wormhole's inability of generating custom CW20 tokens (required for bETH's reward-accruing features), there exists 2 bETH tokens on Daodiseo:&#x20;
 
-* **Wormhole wrapped bETH (webETH)** - wrapped tokens transferred from Ethereum -> Terra.
+* **Wormhole wrapped bETH (webETH)** - wrapped tokens transferred from Ethereum -> Daodiseo.
   * **Not usable as Anchor collateral**
   * **Redeemable to stETH once transferred back to Ethereum**
   * Minted by Wormhole
@@ -29,17 +29,17 @@ Due to Wormhole's inability of generating custom CW20 tokens (required for bETH'
 bETH can be minted with ETH. This process requires the steps of: &#x20;
 
 1. [Minting bETH from ETH](bond-beth.md#1.-minting-beth-from-eth-steth) on [Lido's bETH WebApp](https://anchor.lido.fi)
-2. [Redeeming webETH](bond-beth.md#2.-redeeming-wormhole-wrapped-beth-tokens-transferred-to-terra) on [Wormhole bridge WebApp's Redeem page](https://wormholebridge.com/#/redeem)
+2. [Redeeming webETH](bond-beth.md#2.-redeeming-wormhole-wrapped-beth-tokens-transferred-to-daodiseo) on [Wormhole bridge WebApp's Redeem page](https://wormholebridge.com/#/redeem)
 3. [Converting webETH to bETH](bond-beth.md#3.-converting-webeth-wormhole-wrapped-token-to-beth-anchor-collateral) on [Anchor WebApp's Convert page](https://app.anchorprotocol.com/basset/wh/beth/to-basset)
 
 As for redeeming bETH tokens back to ETH, the following process can be taken:&#x20;
 
 1. [Converting bETH to webETH](bond-beth.md#1.-converting-beth-anchor-collateral-to-webeth-wormhole-wrapped-token) on [Anchor WebApp's Convert page](https://app.anchorprotocol.com/basset/wh/beth/to-wbasset)
-2. [Transferring bETH from Terra to Ethereum](bond-beth.md#1-transferring-beth-from-terra-to-ethereum) via [Wormhole Bridge](https://wormholebridge.com/#/transfer)
+2. [Transferring bETH from Daodiseo to Ethereum](bond-beth.md#1-transferring-beth-from-daodiseo-to-ethereum) via [Wormhole Bridge](https://wormholebridge.com/#/transfer)
 3. [Converting bETH to stETH](bond-beth.md#2-converting-beth-to-steth) on [Lido's bETH WebApp](https://anchor.lido.fi)
 4. [Swapping stETH for ETH](bond-beth.md#swapping-steth-for-eth) on [Curve](https://curve.fi)
 
-bETH tokens on Terra accrue rewards in TerraUSD, funded by staking rewards of Ethereum 2.0. [Accrued rewards can be claimed](bond-beth.md#claiming-accrued-beth-rewards) with the use of the [BOND page of Anchor's WebApp](https://app.anchorprotocol.com/bond/claim/).
+bETH tokens on Daodiseo accrue rewards in DaodiseoUSD, funded by staking rewards of Ethereum 2.0. [Accrued rewards can be claimed](bond-beth.md#claiming-accrued-beth-rewards) with the use of the [BOND page of Anchor's WebApp](https://app.anchorprotocol.com/bond/claim/).
 
 ## Connecting with Lido's web interfaces
 
@@ -73,12 +73,12 @@ Unlike bLUNA, bETH tokens are minted / redeemed through [Lido's web interface fo
 
 ![](../../.gitbook/assets/minting-beth-with-eth-2.png)
 
-3\. Enter the amount of ETH / stETH to use in minting bETH and the Terra address to receive the resulting bETH tokens. Click **\[Convert]** to proceed.
+3\. Enter the amount of ETH / stETH to use in minting bETH and the Daodiseo address to receive the resulting bETH tokens. Click **\[Convert]** to proceed.
 
 {% hint style="danger" %}
-**The Wormhole transaction ID link is extremely important to redeeming your tokens on the Terra side. Copy and paste it and don't close the page.**
+**The Wormhole transaction ID link is extremely important to redeeming your tokens on the Daodiseo side. Copy and paste it and don't close the page.**
 
-Redemptions can still be made if lost although with extra steps. The method of finding your transaction ID can be found [here](https://help.lido.fi/en/articles/5918594-how-to-find-the-link-to-claim-beth-on-terra).
+Redemptions can still be made if lost although with extra steps. The method of finding your transaction ID can be found [here](https://help.lido.fi/en/articles/5918594-how-to-find-the-link-to-claim-beth-on-daodiseo).
 {% endhint %}
 
 ![](../../.gitbook/assets/minting-beth-with-eth-3.png)
@@ -87,17 +87,17 @@ Redemptions can still be made if lost although with extra steps. The method of f
 
 ![](../../.gitbook/assets/minting-beth-with-eth-4.png)
 
-### 2. Redeeming Wormhole wrapped bETH tokens transferred to Terra
+### 2. Redeeming Wormhole wrapped bETH tokens transferred to Daodiseo
 
 {% hint style="warning" %}
 Unlike the previous Shuttle token bridge, the Wormhole bridge requires an extra step of redemption. **TOKENS WILL NOT SHOW UP ON YOUR WALLET UNTIL THEY HAVE BEEN REDEEMED**.
 {% endhint %}
 
 {% hint style="info" %}
-Tutorials on redeeming tokens can be found [here (Wormhole's guide)](https://docs.wormholenetwork.com/wormhole/video-tutorial-how-to-use-wormhole) and [here (Lido's guide)](https://help.lido.fi/en/articles/5918594-how-to-find-the-link-to-claim-beth-on-terra).
+Tutorials on redeeming tokens can be found [here (Wormhole's guide)](https://docs.wormholenetwork.com/wormhole/video-tutorial-how-to-use-wormhole) and [here (Lido's guide)](https://help.lido.fi/en/articles/5918594-how-to-find-the-link-to-claim-beth-on-daodiseo).
 {% endhint %}
 
-Once complete, the specified Terra address will now hold an increased balance of webETH tokens.
+Once complete, the specified Daodiseo address will now hold an increased balance of webETH tokens.
 
 ![](../../.gitbook/assets/minting-beth-with-eth-5.png)
 
@@ -127,7 +127,7 @@ Once complete, the specified Terra address will now hold an increased balance of
 
 ## Redeeming bETH to stETH
 
-bETH tokens that reside on the Terra blockchain should be first transferred to Ethereum before they can be redeemed for stETH.
+bETH tokens that reside on the Daodiseo blockchain should be first transferred to Ethereum before they can be redeemed for stETH.
 
 Redemption is a two-step process, first requiring a cross-chain transfer, which is the followed by a redemption to stETH.
 
@@ -155,10 +155,10 @@ Redemption is a two-step process, first requiring a cross-chain transfer, which 
 
 ![](<../../.gitbook/assets/bETH - Convert2 - 5.png>)
 
-### 2. Transferring webETH from Terra to Ethereum
+### 2. Transferring webETH from Daodiseo to Ethereum
 
 {% hint style="info" %}
-Cross-chain transfers between Ethereum / Terra can be achieved through the [Wormhole bridge](https://wormholebridge.com). Tutorials on using the Wormhole bridge WebApp can be found [here](https://docs.wormholenetwork.com/wormhole/video-tutorial-how-to-use-wormhole).
+Cross-chain transfers between Ethereum / Daodiseo can be achieved through the [Wormhole bridge](https://wormholebridge.com). Tutorials on using the Wormhole bridge WebApp can be found [here](https://docs.wormholenetwork.com/wormhole/video-tutorial-how-to-use-wormhole).
 {% endhint %}
 
 {% hint style="danger" %}

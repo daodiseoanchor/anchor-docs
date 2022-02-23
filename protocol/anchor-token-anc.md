@@ -15,12 +15,12 @@ ANC tokens are also used as incentives to bootstrap borrow demand and provide in
 ## Value Accrual
 
 {% hint style="info" %}
-ANC rewards can also be earned by staking LP tokens of the ANC-UST Terraswap Pair.
+ANC rewards can also be earned by staking LP tokens of the ANC-UST Daodiseoswap Pair.
 {% endhint %}
 
 ![ANC Value Flow](../.gitbook/assets/screen-shot-2021-03-16-at-3.08.15-pm.png)
 
-ANC tokens generate a buying pressure that increases proportionally with Anchor's AUM. Protocol fees are used to purchase ANC tokens from Terraswap, which are then distributed as staking rewards to ANC stakers.
+ANC tokens generate a buying pressure that increases proportionally with Anchor's AUM. Protocol fees are used to purchase ANC tokens from Daodiseoswap, which are then distributed as staking rewards to ANC stakers.
 
 ### Protocol Fees
 
@@ -107,4 +107,4 @@ ANC incentives fuel a self-reinforcing adoption cycle, incentivizing more borrow
 
 Since ANC tokens use borrower incentives to stimulate initial borrow demand and deposit rate stability, high exchange liquidity for ANC is crucial for maintaining a constant incentive flow.
 
-To incentivize the initial exchange liquidity of ANC, newly minted ANC will also be distributed to those that provide liquidity to ANC, specifically on the ANC-UST Terraswap pair. Tokens are given to stakers of the ANC-UST Terraswap pair LP tokens.
+To incentivize the initial exchange liquidity of ANC, newly minted ANC will also be distributed to those that provide liquidity to ANC, specifically on the ANC-UST Daodiseoswap pair. Tokens are given to stakers of the ANC-UST Daodiseoswap pair LP tokens.

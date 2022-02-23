@@ -1,6 +1,6 @@
 # AnchorCLI
 
-`anchorcli` is a command-line interface for Anchor Protocol on Terra and allows more advanced users to perform operations directly from their shell or terminal without having to interact with a graphical interface. `anchorcli` is built on top of `terracli` and allows you to use keys saved in its keychain.
+`anchorcli` is a command-line interface for Anchor Protocol on Daodiseo and allows more advanced users to perform operations directly from their shell or terminal without having to interact with a graphical interface. `anchorcli` is built on top of `daodiseocli` and allows you to use keys saved in its keychain.
 
 {% hint style="info" %}
 This section provides a brief guide on how to interact with Anchor Protocol via `anchorcli`. For further information, please check its [GitHub](https://github.com/Anchor-Protocol/anchorcli) and [Readme](https://www.npmjs.com/package/@anchor-protocol/anchorcli).
@@ -12,7 +12,7 @@ This section provides a brief guide on how to interact with Anchor Protocol via 
 
 * Node.js 12+
 * NPM
-* `terracli` in your path
+* `daodiseocli` in your path
 
 `anchorcli` can be installed through NPM:
 
@@ -27,7 +27,7 @@ $ anchorcli
         
   Usage: anchorcli [options] [command]
 
-  Command-line interface for interacting with Anchor Protocol on Terra
+  Command-line interface for interacting with Anchor Protocol on Daodiseo
 
   Options:
     -V, --version   output the version number
@@ -46,14 +46,14 @@ By default, `anchorcli` works with the default configuration which is set to be 
 
 ### Specifying LCD settings
 
-Each network configuration should define how to connect to the Terra blockchain via LCD parameters.
+Each network configuration should define how to connect to the Daodiseo blockchain via LCD parameters.
 
 * `columbus-5`:
 
 ```javascript
 "lcd": {
     "chainID": "columbus-5",
-    "URL": "https://lcd.terra.dev",
+    "URL": "https://lcd.daodiseo.dev",
     "gasPrices": {
       "uluna": 0.15, // example value 
       "usdr": 0.1018, // example value 
@@ -71,7 +71,7 @@ Each network configuration should define how to connect to the Terra blockchain 
 {
   "lcd": {
     "chainID": "bombay-12",
-    "URL": "https://bombay-lcd.terra.dev",
+    "URL": "https://bombay-lcd.daodiseo.dev",
     "gasPrices": {
       "uluna": 0.15,
       "usdr": 0.1018,
@@ -92,31 +92,31 @@ Each address configuration should point to the correct Anchor core contract addr
 
 ```javascript
 "contracts": {
-    "bLunaHub": "terra1mtwph2juhj0rvjz7dy92gvl6xvukaxu8rfv8ts",
-    "bLunaToken": "terra1kc87mu460fwkqte29rquh4hc20m54fxwtsx7gp",
-    "bLunaReward": "terra17yap3mhph35pcwvhza38c2lkj7gzywzy05h7l0",
-    "bLunaAirdrop": "terra199t7hg7w5vymehhg834r6799pju2q3a0ya7ae9",
-    "mmInterestModel": "terra1kq8zzq5hufas9t0kjsjc62t2kucfnx8txf547n",
-    "mmOracle": "terra1cgg6yef7qcdm070qftghfulaxmllgmvk77nc7t",
-    "mmMarket": "terra1sepfj7s0aeg5967uxnfk4thzlerrsktkpelm5s",
-    "mmOverseer": "terra1tmnqgvg567ypvsvk6rwsga3srp7e3lg6u0elp8",
-    "mmCustody": "terra1ptjp2vfjrwh0j0faj9r6katm640kgjxnwwq9kn",
-    "mmLiquidation": "terra1w9ky73v4g7v98zzdqpqgf3kjmusnx4d4mvnac6",
-    "mmDistributionModel": "terra14mufqpr5mevdfn92p4jchpkxp7xr46uyknqjwq",
-    "aTerra": "terra1hzh9vpxhsk8253se0vv5jj6etdvxu3nv8z07zu",
-    "terraswapblunaLunaPair": "terra1jxazgm67et0ce260kvrpfv50acuushpjsz2y0p",
-    "terraswapblunaLunaLPToken": "terra1nuy34nwnsh53ygpc4xprlj263cztw7vc99leh2",
-    "terraswapAncUstPair": "terra1gm5p3ner9x9xpwugn9sp6gvhd0lwrtkyrecdn3",
-    "terraswapAncUstLPToken": "terra1gecs98vcuktyfkrve9czrpgtg0m3aq586x6gzm",
-    "gov": "terra1f32xyep306hhcxxxf7mlyh0ucggc00rm2s9da5",
-    "distributor": "terra1mxf7d5updqxfgvchd7lv6575ehhm8qfdttuqzz",
-    "collector": "terra14ku9pgw5ld90dexlyju02u4rn6frheexr5f96h",
-    "community": "terra12wk8dey0kffwp27l5ucfumczlsc9aned8rqueg",
-    "staking": "terra1897an2xux840p9lrh6py3ryankc6mspw49xse3",
-    "ANC": "terra14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76",
-    "airdrop": "terra146ahqn6d3qgdvmj8cj96hh03dzmeedhsf0kxqm",
-    "investor_vesting": "terra1pm54pmw3ej0vfwn3gtn6cdmaqxt0x37e9jt0za",
-    "team_vesting": "terra10evq9zxk2m86n3n3xnpw28jpqwp628c6dzuq42"
+    "bLunaHub": "daodiseo1mtwph2juhj0rvjz7dy92gvl6xvukaxu8rfv8ts",
+    "bLunaToken": "daodiseo1kc87mu460fwkqte29rquh4hc20m54fxwtsx7gp",
+    "bLunaReward": "daodiseo17yap3mhph35pcwvhza38c2lkj7gzywzy05h7l0",
+    "bLunaAirdrop": "daodiseo199t7hg7w5vymehhg834r6799pju2q3a0ya7ae9",
+    "mmInterestModel": "daodiseo1kq8zzq5hufas9t0kjsjc62t2kucfnx8txf547n",
+    "mmOracle": "daodiseo1cgg6yef7qcdm070qftghfulaxmllgmvk77nc7t",
+    "mmMarket": "daodiseo1sepfj7s0aeg5967uxnfk4thzlerrsktkpelm5s",
+    "mmOverseer": "daodiseo1tmnqgvg567ypvsvk6rwsga3srp7e3lg6u0elp8",
+    "mmCustody": "daodiseo1ptjp2vfjrwh0j0faj9r6katm640kgjxnwwq9kn",
+    "mmLiquidation": "daodiseo1w9ky73v4g7v98zzdqpqgf3kjmusnx4d4mvnac6",
+    "mmDistributionModel": "daodiseo14mufqpr5mevdfn92p4jchpkxp7xr46uyknqjwq",
+    "aDaodiseo": "daodiseo1hzh9vpxhsk8253se0vv5jj6etdvxu3nv8z07zu",
+    "daodiseoswapblunaLunaPair": "daodiseo1jxazgm67et0ce260kvrpfv50acuushpjsz2y0p",
+    "daodiseoswapblunaLunaLPToken": "daodiseo1nuy34nwnsh53ygpc4xprlj263cztw7vc99leh2",
+    "daodiseoswapAncUstPair": "daodiseo1gm5p3ner9x9xpwugn9sp6gvhd0lwrtkyrecdn3",
+    "daodiseoswapAncUstLPToken": "daodiseo1gecs98vcuktyfkrve9czrpgtg0m3aq586x6gzm",
+    "gov": "daodiseo1f32xyep306hhcxxxf7mlyh0ucggc00rm2s9da5",
+    "distributor": "daodiseo1mxf7d5updqxfgvchd7lv6575ehhm8qfdttuqzz",
+    "collector": "daodiseo14ku9pgw5ld90dexlyju02u4rn6frheexr5f96h",
+    "community": "daodiseo12wk8dey0kffwp27l5ucfumczlsc9aned8rqueg",
+    "staking": "daodiseo1897an2xux840p9lrh6py3ryankc6mspw49xse3",
+    "ANC": "daodiseo14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76",
+    "airdrop": "daodiseo146ahqn6d3qgdvmj8cj96hh03dzmeedhsf0kxqm",
+    "investor_vesting": "daodiseo1pm54pmw3ej0vfwn3gtn6cdmaqxt0x37e9jt0za",
+    "team_vesting": "daodiseo10evq9zxk2m86n3n3xnpw28jpqwp628c6dzuq42"
   }
 ```
 
@@ -125,29 +125,29 @@ Each address configuration should point to the correct Anchor core contract addr
 ```javascript
 {
    "contracts": {
-     "bLunaHub": "terra1fflas6wv4snv8lsda9knvq2w0cyt493r8puh2e",
-     "bLunaToken": "terra1u0t35drzyy0mujj8rkdyzhe264uls4ug3wdp3x",
-     "bLunaReward": "terra1ac24j6pdxh53czqyrkr6ygphdeftg7u3958tl2",
-     "bLunaAirdrop": "terra1334h20c9ewxguw9p9vdxzmr8994qj4qu77ux6q",
-     "mmInterestModel": "terra1m25aqupscdw2kw4tnq5ql6hexgr34mr76azh5x",
-     "mmOracle": "terra1p4gg3p2ue6qy2qfuxtrmgv2ec3f4jmgqtazum8",
-     "mmMarket": "terra15dwd5mj8v59wpj0wvt233mf5efdff808c5tkal",
-     "mmOverseer": "terra1qljxd0y3j3gk97025qvl3lgq8ygup4gsksvaxv",
-     "mmCustody": "terra1ltnkx0mv7lf2rca9f8w740ashu93ujughy4s7p",
-     "mmLiquidation": "terra16vc4v9hhntswzkuunqhncs9yy30mqql3gxlqfe",
-     "mmDistributionModel": "terra1u64cezah94sq3ye8y0ung28x3pxc37tv8fth7h",
-     "aTerra": "terra1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl",
-     "terraswapblunaLunaPair": "terra13e4jmcjnwrauvl2fnjdwex0exuzd8zrh5xk29v",
-     "terraswapblunaLunaLPToken": "terra1tj4pavqjqjfm0wh73sh7yy9m4uq3m2cpmgva6n",
-     "terraswapAncUstPair": "terra1wfvczps2865j0awnurk9m04u7wdmd6qv3fdnvz",
-     "terraswapAncUstLPToken": "terra1vg0qyq92ky9z9dp0j9fv5rmr2s80sg605dah6f",
-     "gov": "terra16ckeuu7c6ggu52a8se005mg5c0kd2kmuun63cu",
-     "distributor": "terra1z7nxemcnm8kp7fs33cs7ge4wfuld307v80gypj",
-     "collector": "terra1hlctcrrhcl2azxzcsns467le876cfuzam6jty4",
-     "community": "terra17g577z0pqt6tejhceh06y3lyeudfs3v90mzduy",
-     "staking": "terra19nxz35c8f7t3ghdxrxherym20tux8eccar0c3k",
-     "ANC": "terra1747mad58h0w4y589y3sk84r5efqdev9q4r02pc",
-     "airdrop": "terra1u5ywhlve3wugzqslqvm8ks2j0nsvrqjx0mgxpk",
+     "bLunaHub": "daodiseo1fflas6wv4snv8lsda9knvq2w0cyt493r8puh2e",
+     "bLunaToken": "daodiseo1u0t35drzyy0mujj8rkdyzhe264uls4ug3wdp3x",
+     "bLunaReward": "daodiseo1ac24j6pdxh53czqyrkr6ygphdeftg7u3958tl2",
+     "bLunaAirdrop": "daodiseo1334h20c9ewxguw9p9vdxzmr8994qj4qu77ux6q",
+     "mmInterestModel": "daodiseo1m25aqupscdw2kw4tnq5ql6hexgr34mr76azh5x",
+     "mmOracle": "daodiseo1p4gg3p2ue6qy2qfuxtrmgv2ec3f4jmgqtazum8",
+     "mmMarket": "daodiseo15dwd5mj8v59wpj0wvt233mf5efdff808c5tkal",
+     "mmOverseer": "daodiseo1qljxd0y3j3gk97025qvl3lgq8ygup4gsksvaxv",
+     "mmCustody": "daodiseo1ltnkx0mv7lf2rca9f8w740ashu93ujughy4s7p",
+     "mmLiquidation": "daodiseo16vc4v9hhntswzkuunqhncs9yy30mqql3gxlqfe",
+     "mmDistributionModel": "daodiseo1u64cezah94sq3ye8y0ung28x3pxc37tv8fth7h",
+     "aDaodiseo": "daodiseo1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl",
+     "daodiseoswapblunaLunaPair": "daodiseo13e4jmcjnwrauvl2fnjdwex0exuzd8zrh5xk29v",
+     "daodiseoswapblunaLunaLPToken": "daodiseo1tj4pavqjqjfm0wh73sh7yy9m4uq3m2cpmgva6n",
+     "daodiseoswapAncUstPair": "daodiseo1wfvczps2865j0awnurk9m04u7wdmd6qv3fdnvz",
+     "daodiseoswapAncUstLPToken": "daodiseo1vg0qyq92ky9z9dp0j9fv5rmr2s80sg605dah6f",
+     "gov": "daodiseo16ckeuu7c6ggu52a8se005mg5c0kd2kmuun63cu",
+     "distributor": "daodiseo1z7nxemcnm8kp7fs33cs7ge4wfuld307v80gypj",
+     "collector": "daodiseo1hlctcrrhcl2azxzcsns467le876cfuzam6jty4",
+     "community": "daodiseo17g577z0pqt6tejhceh06y3lyeudfs3v90mzduy",
+     "staking": "daodiseo19nxz35c8f7t3ghdxrxherym20tux8eccar0c3k",
+     "ANC": "daodiseo1747mad58h0w4y589y3sk84r5efqdev9q4r02pc",
+     "airdrop": "daodiseo1u5ywhlve3wugzqslqvm8ks2j0nsvrqjx0mgxpk",
      "investor_vesting": "not available in testnet",
      "team_vesting": "not available in testnet"
    }
@@ -188,13 +188,13 @@ Execute a function on a smart contract
 Options:
   --yaml                         Encode result as YAML instead of JSON
   -y,--yes                       Sign transaction without confirming (yes)
-  --home <string>                Directory for config of terracli
-  --from <key-name>              *Name of key in terracli keyring
+  --home <string>                Directory for config of daodiseocli
+  --from <key-name>              *Name of key in daodiseocli keyring
   --generate-only                Build an unsigned transaction and write it to stdout
   -G,--generate-msg              Build an ExecuteMsg (good for including in poll)
   --base64                       For --generate-msg: returns msg as base64
   -b,--broadcast-mode <string>   Transaction broadcasting mode (sync|async|block) (default: sync) (default: "sync")
-  --chain-id <string>            Chain ID of Terra node
+  --chain-id <string>            Chain ID of Daodiseo node
   -a,--account-number <int>      The account number of the signing account (offline mode)
   -s,--sequence <int>            The sequence number of the signing account (offline mode)
   --memo <string>                Memo to send along with transaction
@@ -214,7 +214,7 @@ Commands:
   custody-bluna [options]     Anchor Money Market Custody contract functions
   overseer [options]          Anchor Money Market Overseer contract functions
   interest [options]          Anchor Money Market Interest contract functions
-  terraswap [options]         terraswap, anchor related contract functions
+  daodiseoswap [options]         daodiseoswap, anchor related contract functions
   gov [options]               ANC Gov contract functions
   airdrop [options]           Anchor Airdrop contract functions [mainnet only]
   collector [options]         Anchor Collector contract functions
@@ -246,7 +246,7 @@ Commands:
   custody-bluna [options]  Anchor Money Market Custody contract queries
   overseer [options]       Anchor Money Market Overseer contract queries
   interest [options]       Anchor Money Market Interest contract queries
-  terraswap [options]      Terraswap contract queries
+  daodiseoswap [options]      Daodiseoswap contract queries
   gov [options]            Anchor Gov contract queries
   airdrop [options]        Anchor Airdrop contract queries [mainnet only]
   collector [options]      Anchor Collector contract queries
@@ -260,11 +260,11 @@ Commands:
 
 ## Examples
 
-This section illustrates the usage of `anchorcli` through some use cases. All examples assume you have a key in `terracli` keychain called `test1`.
+This section illustrates the usage of `anchorcli` through some use cases. All examples assume you have a key in `daodiseocli` keychain called `test1`.
 
 #### Bond Luna to mint bLuna
 
-Anchor protocol requires you to provide bAsset collaterals to borrow Terra stablecoins. bLuna tokens which are whitelisted as an eligible collateral can be used.
+Anchor protocol requires you to provide bAsset collaterals to borrow Daodiseo stablecoins. bLuna tokens which are whitelisted as an eligible collateral can be used.
 
 In order to obtain bLuna tokens, a user needs to bond Luna first, which then the contract will issue bLuna for the user. The following example is the way a user can bond Luna to gain bLuna \(in response to which the contract will issue bLuna for the user\):
 

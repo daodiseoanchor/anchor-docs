@@ -1,6 +1,6 @@
 # Custody \[bLUNA\]
 
-The Custody contract is where supplied bAsset collaterals are managed. Users can make collateral deposits and withdrawals to and from this contract. The Custody contract is also responsible for claiming bAsset rewards and converting them to Terra stablecoins, which is then sent to the Overseer contract for eventual distribution.
+The Custody contract is where supplied bAsset collaterals are managed. Users can make collateral deposits and withdrawals to and from this contract. The Custody contract is also responsible for claiming bAsset rewards and converting them to Daodiseo stablecoins, which is then sent to the Overseer contract for eventual distribution.
 
 ## Config
 
@@ -45,12 +45,12 @@ pub struct BAssetInfo {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
-  "collateral_token": "terra1...",
-  "overseer_contract": "terra1...",
-  "market_contract": "terra1...",
-  "reward_contract": "terra1...",
-  "liquidation_contract": "terra1...", 
+  "owner": "daodiseo1...", 
+  "collateral_token": "daodiseo1...",
+  "overseer_contract": "daodiseo1...",
+  "market_contract": "daodiseo1...",
+  "reward_contract": "daodiseo1...",
+  "liquidation_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "basset_info": {
     "name": "bonded luna", 
@@ -104,7 +104,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "receive": {
-    "sender": "terra1...",
+    "sender": "daodiseo1...",
     "amount": "10000000",
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9"
   }
@@ -141,8 +141,8 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1...", 
-    "liquidation_contract": "terra1..." 
+    "owner": "daodiseo1...", 
+    "liquidation_contract": "daodiseo1..." 
   }
 }
 ```
@@ -178,7 +178,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "lock_collateral": { 
-    "borrower": "terra1...", 
+    "borrower": "daodiseo1...", 
     "amount": "10000000"
   }
 }
@@ -213,7 +213,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "unlock_collateral": { 
-    "borrower": "terra1...", 
+    "borrower": "daodiseo1...", 
     "amount": "10000000"
   }
 }
@@ -279,8 +279,8 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "liquidate_collateral": {
-    "liquidator": "terra1...", 
-    "borrower": "terra1...", 
+    "liquidator": "daodiseo1...", 
+    "borrower": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -425,12 +425,12 @@ pub struct BAssetInfo {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
-  "collateral_token": "terra1...", 
-  "overseer_contract": "terra1...", 
-  "market_contract": "terra1...", 
-  "reward_contract": "terra1...", 
-  "liquidation_contract": "terra1...", 
+  "owner": "daodiseo1...", 
+  "collateral_token": "daodiseo1...", 
+  "overseer_contract": "daodiseo1...", 
+  "market_contract": "daodiseo1...", 
+  "reward_contract": "daodiseo1...", 
+  "liquidation_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "basset_info": {
     "name": "bonded luna", 
@@ -480,7 +480,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "borrower": { 
-    "address": "terra1..." 
+    "address": "daodiseo1..." 
   }
 }
 ```
@@ -508,7 +508,7 @@ pub struct BorrowerResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "borrower": "terra1...", 
+  "borrower": "daodiseo1...", 
   "balance": "1000000000", 
   "spendable": "100000000" 
 }
@@ -544,7 +544,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "borrowers": { 
-    "start_after": "terra1...", 
+    "start_after": "daodiseo1...", 
     "limit": 10 
   }
 }
@@ -583,12 +583,12 @@ pub struct BorrowerResponse {
 {
   "borrowers": [
     {
-      "borrower": "terra1...", 
+      "borrower": "daodiseo1...", 
       "balance": "2389476982", 
       "spendable": "2837492" 
     }, 
     {
-      "borrower": "terra1...", 
+      "borrower": "daodiseo1...", 
       "balance": "2389476982", 
       "spendable": "2837492" 
     }

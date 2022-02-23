@@ -18,8 +18,8 @@ Below are sections that contains the API documentation for using the EthAnchor A
 | Operation Type | Description |
 | :--- | :--- |
 | [Getting Market Information](getting-market-information.md) | Endpoint for retrieving data regarding a specific stablecoin market |
-| [Depositing Stablecoins](depositing-stablecoins.md) | Endpoints for depositing wrapped Terra stablecoins to Anchor |
-| [Redeeming Stablecoins](redeeming-stablecoins.md) | Endpoints for redeeming wrapped Terra stablecoins from Anchor |
+| [Depositing Stablecoins](depositing-stablecoins.md) | Endpoints for depositing wrapped Daodiseo stablecoins to Anchor |
+| [Redeeming Stablecoins](redeeming-stablecoins.md) | Endpoints for redeeming wrapped Daodiseo stablecoins from Anchor |
 
 Fabricated transactions are unsigned Ethereum Tx payloads that include the user's desired EthAnchor operation. Users can then sign the Tx payload and broadcast it to the relevant Ethereum network to conduct the operation.
 

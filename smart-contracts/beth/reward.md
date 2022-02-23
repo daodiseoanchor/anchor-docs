@@ -1,6 +1,6 @@
 # Reward
 
-The Reward contract handles the distribution of Ethereum 2.0 staking rewards to holders of CW20 bETH. Ethereum 2.0 staking rewards \(which are first converted to TerraUSD via Ethereum AMM protocols\) are transferred over to the Reward contract, which are subsequently distributed to holders of bETH. bETH holders can send a request to this contract to claim their accrued rewards.
+The Reward contract handles the distribution of Ethereum 2.0 staking rewards to holders of CW20 bETH. Ethereum 2.0 staking rewards \(which are first converted to DaodiseoUSD via Ethereum AMM protocols\) are transferred over to the Reward contract, which are subsequently distributed to holders of bETH. bETH holders can send a request to this contract to claim their accrued rewards.
 
 The Reward contract also stores the balance and reward index values for all bETH holders, which is used to calculate the amount of bETH rewards that a specific holder has accrued.
 
@@ -58,7 +58,7 @@ pub struct State {
 | :--- | :--- | :--- |
 | `global_index` | Decimal | Current global reward index of bETH |
 | `total_balance` | Uint128 | Total bETH balance of all holders |
-| `prev_reward_balance` | Uint128 | TerraUSD balance of Reward contract at the time of last global index update |
+| `prev_reward_balance` | Uint128 | DaodiseoUSD balance of Reward contract at the time of last global index update |
 
 ### Holder
 
@@ -109,7 +109,7 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "reward_denom": "uusd" 
 }
 ```
@@ -144,7 +144,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "post_initialize": {
-    "token_contract": "terra1..." 
+    "token_contract": "daodiseo1..." 
   }
 }
 ```
@@ -176,7 +176,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1..." 
+    "owner": "daodiseo1..." 
   }
 }
 ```
@@ -208,7 +208,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "claim_rewards": {
-    "recipient": "terra1..." 
+    "recipient": "daodiseo1..." 
   }
 }
 ```
@@ -243,7 +243,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "increase_balance": {
-    "address": "terra1...", 
+    "address": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -278,7 +278,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "decrease_balance": {
-    "address": "terra1...", 
+    "address": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -350,9 +350,9 @@ pub struct ConfigResponse {
 
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "reward_denom": "uusd", 
-  "token_contract": "terra1..." 
+  "token_contract": "daodiseo1..." 
 }
 ```
 
@@ -401,7 +401,7 @@ pub struct StateResponse {
 | :--- | :--- | :--- |
 | `global_index` | Decimal | Current global reward index of bETH |
 | `total_balance` | Uint128 | Total bETH balance of all holders |
-| `prev_reward_balance` | Uint128 | TerraUSD balance of the Reward contract at the time of last reward distribution |
+| `prev_reward_balance` | Uint128 | DaodiseoUSD balance of the Reward contract at the time of last reward distribution |
 {% endtab %}
 
 {% tab title="JSON" %}
@@ -431,7 +431,7 @@ pub struct StateResponse {
 | :--- | :--- | :--- |
 | `global_index` | Decimal | Current global reward index of bETH |
 | `total_balance` | Uint128 | Total bETH balance of all holders |
-| `prev_reward_balance` | Uint128 | TerraUSD balance of the Reward contract at the time of last reward distribution |
+| `prev_reward_balance` | Uint128 | DaodiseoUSD balance of the Reward contract at the time of last reward distribution |
 {% endtab %}
 {% endtabs %}
 
@@ -477,7 +477,7 @@ pub struct AccruedRewardsResponse {
 ```javascript
 {
   "accrued_rewards": {
-    "address": "terra1..." 
+    "address": "daodiseo1..." 
   }
 }
 ```
@@ -548,7 +548,7 @@ pub struct HolderResponse {
 ```javascript
 {
   "holder": {
-    "address": "terra1..." 
+    "address": "daodiseo1..." 
   }
 }
 ```
@@ -561,7 +561,7 @@ pub struct HolderResponse {
 
 ```javascript
 {
-  "address": "terra1...", 
+  "address": "daodiseo1...", 
   "balance": "100000000", 
   "index": "100.0", 
   "pending_rewards": "1000000.123" 
@@ -638,7 +638,7 @@ pub struct HolderResponse {
 ```rust
 {
   "holders": {
-    "start_after": "terra1...", 
+    "start_after": "daodiseo1...", 
     "limit": 8 
   }
 }
@@ -657,13 +657,13 @@ pub struct HolderResponse {
 {
   "holders": [
     {
-      "address": "terra1...", 
+      "address": "daodiseo1...", 
       "balance": "100000000", 
       "index": "123.456789", 
       "pending_rewards": "123.456789" 
     }, 
     {
-      "address": "terra1...", 
+      "address": "daodiseo1...", 
       "balance": "100000000", 
       "index": "123.456789", 
       "pending_rewards": "123.456789" 

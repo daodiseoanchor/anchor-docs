@@ -1,6 +1,6 @@
 # Claiming ANC Rewards
 
-The **Rewards** section of the **GOVERN** page provides users with function for claiming ANC rewards distributed to users. Rewards generated from borrowing Terra stablecoins and providing liquidity to ANC can all be claimed from this section.
+The **Rewards** section of the **GOVERN** page provides users with function for claiming ANC rewards distributed to users. Rewards generated from borrowing Daodiseo stablecoins and providing liquidity to ANC can all be claimed from this section.
 
 The **Claiming ANC Rewards** section of the **GOVERN** page displays:
 

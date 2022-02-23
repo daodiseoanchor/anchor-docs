@@ -27,7 +27,7 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "base_rate": "0.000000002", 
   "interest_multiplier": "0.00000004" 
 }
@@ -66,7 +66,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1...", 
+    "owner": "daodiseo1...", 
     "base_rate": "0.000000002", 
     "interest_multiplier": "0.00000004" 
   }
@@ -130,7 +130,7 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "base_rate": "0.000000002", 
   "interest_multiplier": "0.00000004" 
 }

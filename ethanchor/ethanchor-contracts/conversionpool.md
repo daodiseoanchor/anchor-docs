@@ -37,7 +37,7 @@ function deposit(uint256 _amount, uint256 _minAmountOut) external;
 
 ### `redeem`
 
-Redeems \(withdraws\) the specified amount of aTerra tokens.
+Redeems \(withdraws\) the specified amount of aDaodiseo tokens.
 
 ```text
 function redeem(uint256 _amount) external; 
@@ -45,11 +45,11 @@ function redeem(uint256 _amount) external;
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| `_amount` | uint256 | Amount of aTerra to redeem |
+| `_amount` | uint256 | Amount of aDaodiseo to redeem |
 
 ### `redeem`
 
-Redeems the specified amount of aTerra tokens.
+Redeems the specified amount of aDaodiseo tokens.
 
 {% hint style="danger" %}
 Logic for enforcing `_minAmountOut` for `redeem` is yet to be implemented. Please be noted that the specified minimum amount will not be enforced.
@@ -61,6 +61,6 @@ function redeem(uint256 _amount, uint256 _minAmountOut) external;
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| `_amount` | uint256 | Amount of aTerra to redeem |
+| `_amount` | uint256 | Amount of aDaodiseo to redeem |
 | `_minAmountOut` | uint256 | Minimum amount of stablecoins to receive post-swap |
 

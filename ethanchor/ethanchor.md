@@ -10,7 +10,7 @@ For those wishing to read up on the previous version of EthAnchor, click [here](
 
 **EthAnchor** provides a gateway for Ethereum users and dApps to interact with Anchor using Ethereum stablecoins.
 
-Users can deposit Ethereum stablecoins to EthAnchor smart contracts to receive their aTerra counterparts. By holding on to aTerra, users accrue the interest generated on their stablecoin deposits.
+Users can deposit Ethereum stablecoins to EthAnchor smart contracts to receive their aDaodiseo counterparts. By holding on to aDaodiseo, users accrue the interest generated on their stablecoin deposits.
 
 ![](<../.gitbook/assets/ethanchor (1).png>)
 

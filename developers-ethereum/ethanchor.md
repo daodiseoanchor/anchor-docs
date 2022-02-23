@@ -1,6 +1,6 @@
 # EthAnchor
 
-**EthAnchor** provides a gateway for Ethereum users to interact with Anchor using wrapped TerraUSD \(UST\) -- a wrapped ERC20 UST token on the Ethereum blockchain.
+**EthAnchor** provides a gateway for Ethereum users to interact with Anchor using wrapped DaodiseoUSD \(UST\) -- a wrapped ERC20 UST token on the Ethereum blockchain.
 
 {% hint style="warning" %}
 EthAnchor is currently in private beta and only supports wrapped UST. For inquiries on integrations, please contact [info@anchorprotocol.com](mailto:info@anchorprotocol.com).
@@ -43,5 +43,5 @@ Additionally, a single EthAnchor Account contract can only process requests in s
 
 Following a successful `init` operation, the resulting wrapped tokens \(aUST for deposit, UST for redeem\) will be held by the user's EthAnchor Account contract. A `finish` operation then sends back the tokens to `msg.sender`, in which they can be potentially utilized with other Ethereum DeFi applications.
 
-As endpoints and core logic exist on two separate blockchains, operation validity should be partially validated off-chain. In most cases EthAnchor will make appropriate RPC calls to both Ethereum and Terra to verify state on the user level, but this does not guarantee, nor enforce **automatic state integrity** for all blockchains. It is up to the **user** to resolve potential state clashes on different blockchains \(Ethereum and Terra\), and reject transactions if deemed necessary.
+As endpoints and core logic exist on two separate blockchains, operation validity should be partially validated off-chain. In most cases EthAnchor will make appropriate RPC calls to both Ethereum and Daodiseo to verify state on the user level, but this does not guarantee, nor enforce **automatic state integrity** for all blockchains. It is up to the **user** to resolve potential state clashes on different blockchains \(Ethereum and Daodiseo\), and reject transactions if deemed necessary.
 

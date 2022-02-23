@@ -50,11 +50,11 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner_addr": "terra1...", 
-  "oracle_contract": "terra1...", 
-  "market_contract": "terra1...", 
-  "liquidation_contract": "terra1...", 
-  "collector_contract": "terra1...", 
+  "owner_addr": "daodiseo1...", 
+  "oracle_contract": "daodiseo1...", 
+  "market_contract": "daodiseo1...", 
+  "liquidation_contract": "daodiseo1...", 
+  "collector_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "epoch_period": 86400, 
   "threshold_deposit_rate": "0.1", 
@@ -113,9 +113,9 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": { 
-    "owner_addr": "terra1...", 
-    "oracle_contract": "terra1...", 
-    "liquidation_contract": "terra1...", 
+    "owner_addr": "daodiseo1...", 
+    "oracle_contract": "daodiseo1...", 
+    "liquidation_contract": "daodiseo1...", 
     "threshold_deposit_rate": "0.1", 
     "target_deposit_rate": "0.15", 
     "buffer_distribution_factor": "0.1", 
@@ -169,8 +169,8 @@ pub enum ExecuteMsg {
   "whitelist": { 
     "name": "bonded luna", 
     "symbol": "ubluna", 
-    "collateral_token": "terra1...", 
-    "custody_contract": "terra1...", 
+    "collateral_token": "daodiseo1...", 
+    "custody_contract": "daodiseo1...", 
     "max_ltv": "0.75" 
   }
 }
@@ -209,8 +209,8 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_whitelist": {
-    "collateral_token": "terra1...", 
-    "custody_contract": "terra1...", 
+    "collateral_token": "daodiseo1...", 
+    "custody_contract": "daodiseo1...", 
     "max_ltv": "0.75" 
   }
 }
@@ -313,8 +313,8 @@ pub type TokensHuman = Vec<(String, Uint256)>;
 {
   "lock_collateral": { 
     "collaterals": [
-      ["terra1...", "100000000"], // (CW20 contract address, Amount to lock)
-      ["terra1...", "100000000"] 
+      ["daodiseo1...", "100000000"], // (CW20 contract address, Amount to lock)
+      ["daodiseo1...", "100000000"] 
     ]
   }
 }
@@ -354,8 +354,8 @@ pub type TokensHuman = Vec<(String, Uint256)>;
 {
   "unlock_collateral": {
     "collaterals": [
-      ["terra1...", "100000000"], // (CW20 contract address, Amount to unlock)
-      ["terra1...", "100000000"] 
+      ["daodiseo1...", "100000000"], // (CW20 contract address, Amount to unlock)
+      ["daodiseo1...", "100000000"] 
     ]
   }
 }
@@ -392,7 +392,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "liquidate_collateral": {
-    "borrower": "terra1..."
+    "borrower": "daodiseo1..."
   }
 }
 ```
@@ -459,11 +459,11 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner_addr": "terra1...", 
-  "oracle_contract": "terra1...", 
-  "market_contract": "terra1...", 
-  "liquidation_contract": "terra1...", 
-  "collector_contract": "terra1...", 
+  "owner_addr": "daodiseo1...", 
+  "oracle_contract": "daodiseo1...", 
+  "market_contract": "daodiseo1...", 
+  "liquidation_contract": "daodiseo1...", 
+  "collector_contract": "daodiseo1...", 
   "distribution_threshold": "0.1", 
   "target_deposit_rate": "0.15", 
   "buffer_distribution_rate": "0.1", 
@@ -527,7 +527,7 @@ pub enum QueryMsg {
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct EpochState {
     pub deposit_rate: Decimal256, 
-    pub prev_aterra_supply: Uint256, 
+    pub prev_adaodiseo_supply: Uint256, 
     pub prev_exchange_rate: Decimal256, 
     pub prev_interest_buffer: Uint256, 
     pub last_executed_height: u64, 
@@ -539,7 +539,7 @@ pub struct EpochState {
 ```javascript
 {
   "deposit_rate": "0.13", 
-  "prev_aterra_supply": "100000000", 
+  "prev_adaodiseo_supply": "100000000", 
   "prev_exchange_rate": "1.2", 
   "prev_interest_buffer": "100000000", 
   "last_executed_height": 123456 
@@ -551,8 +551,8 @@ pub struct EpochState {
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `deposit_rate` | Decimal256 | Average per-block deposit rate during the last epoch |
-| `prev_aterra_supply` | Uint256 | Total aTerra supply at when epoch operations were last executed |
-| `prev_exchange_rate` | Decimal256 | aTerra exchange rate when epoch operations were last executed |
+| `prev_adaodiseo_supply` | Uint256 | Total aDaodiseo supply at when epoch operations were last executed |
+| `prev_exchange_rate` | Decimal256 | aDaodiseo exchange rate when epoch operations were last executed |
 | `prev_interest_buffer` | Uint256 | Amount of yield reserves when epoch operations were last executed |
 | `last_executed_height` | u64 | Block number when epoch operations were last executed |
 
@@ -580,7 +580,7 @@ pub enum QueryMsg {
 {
   "whitelist": { 
     "collateral_token": null, 
-    "start_after": "terra1...", 
+    "start_after": "daodiseo1...", 
     "limit": 3 
   }
 }
@@ -625,15 +625,15 @@ pub struct WhitelistResponseElem {
       "name": "bonded luna", 
       "symbol": "ubluna", 
       "max_ltv": "0.5", 
-      "custody_contract": "terra1...", 
-      "collateral_token": "terra1..." 
+      "custody_contract": "daodiseo1...", 
+      "collateral_token": "daodiseo1..." 
     }, 
     {
       "name": "bonded atom", 
       "symbol": "ubatom", 
       "max_ltv": "0.4", 
-      "custody_contract": "terra1...", 
-      "collateral_token": "terra1..." 
+      "custody_contract": "daodiseo1...", 
+      "collateral_token": "daodiseo1..." 
     }
   ]
 }
@@ -674,7 +674,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "collaterals": {
-    "borrower": "terra1..." 
+    "borrower": "daodiseo1..." 
   }
 {
 ```
@@ -703,10 +703,10 @@ pub type TokensHuman = Vec<(String, Uint256)>;
 {% tab title="JSON" %}
 ```javascript
 {
-  "borrower": "terra1...", 
+  "borrower": "daodiseo1...", 
   "collaterals": [
-    ["terra1...", "100000000"],  // (CW20 contract address, Locked amount)
-    ["terra1...", "100000000"]
+    ["daodiseo1...", "100000000"],  // (CW20 contract address, Locked amount)
+    ["daodiseo1...", "100000000"]
   ] 
 }
 ```
@@ -744,7 +744,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "all_collaterals": {
-    "start_after": "terra1...", 
+    "start_after": "daodiseo1...", 
     "limit": 8 
   }
 }
@@ -783,17 +783,17 @@ pub type TokensHuman = Vec<(String, Uint256)>;
 {
   "all_collaterals": [
     {
-      "borrower": "terra1...", 
+      "borrower": "daodiseo1...", 
       "collaterals": [
-        ["terra1...", "100000000"], // (CW20 contract address, Locked amount)
-        ["terra1...", "100000000"] 
+        ["daodiseo1...", "100000000"], // (CW20 contract address, Locked amount)
+        ["daodiseo1...", "100000000"] 
       ]
     }, 
     {
-      "borrower": "terra1...", 
+      "borrower": "daodiseo1...", 
       "collaterals": [
-        ["terra1...", "100000000"], // (CW20 contract address, Locked amount)
-        ["terra1...", "100000000"] 
+        ["daodiseo1...", "100000000"], // (CW20 contract address, Locked amount)
+        ["daodiseo1...", "100000000"] 
       ]
     }
   ]
@@ -837,7 +837,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "borrow_limit": { 
-    "borrower": "terra1...", 
+    "borrower": "daodiseo1...", 
     "block_time": 123456 
   }
 }
@@ -868,7 +868,7 @@ pub struct BorrowLimitResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "borrower": "terra1...", 
+  "borrower": "daodiseo1...", 
   "borrow_limit": "100000000" 
 }
 ```

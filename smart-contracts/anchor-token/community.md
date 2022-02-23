@@ -27,8 +27,8 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "gov_contract": "terra1...", 
-  "anchor_token": "terra1...", 
+  "gov_contract": "daodiseo1...", 
+  "anchor_token": "daodiseo1...", 
   "spend_limit": "100000000000" 
 }
 ```
@@ -99,7 +99,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "spend": {
-    "recipient": "terra1...", 
+    "recipient": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -159,8 +159,8 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "gov_contract": "terra1...", 
-  "anchor_token": "terra1...", 
+  "gov_contract": "daodiseo1...", 
+  "anchor_token": "daodiseo1...", 
   "spend_limit": "100000000000" 
 }
 ```

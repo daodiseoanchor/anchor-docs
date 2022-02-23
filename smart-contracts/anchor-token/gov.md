@@ -89,7 +89,7 @@ pub enum ExecuteMsg {
 {
   "receive": {
     "amount": "10000000",
-    "sender": "terra1...",
+    "sender": "daodiseo1...",
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9"
   }
 }
@@ -156,7 +156,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "register_contracts": {
-    "anchor_token": "terra1...", 
+    "anchor_token": "daodiseo1...", 
   }
 }
 ```
@@ -195,7 +195,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1...", 
+    "owner": "daodiseo1...", 
     "quorum": "0.1", 
     "threshold": "0.1", 
     "voting_period": 123456, 
@@ -471,12 +471,12 @@ pub struct PollExecuteMsg {
     "execute_msgs": [
       {
         "order": 1, 
-        "contract": "terra1...", 
+        "contract": "daodiseo1...", 
         "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
       }, 
       {
         "order": 2, 
-        "contract": "terra1...", 
+        "contract": "daodiseo1...", 
         "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
       } 
     ]
@@ -554,8 +554,8 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
-  "anchor_token": "terra1...", 
+  "owner": "daodiseo1...", 
+  "anchor_token": "daodiseo1...", 
   "quorum": "0.1", 
   "threshold": "0.5", 
   "voting_period": 123456, 
@@ -660,7 +660,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "staker": {
-    "address": "terra1..." 
+    "address": "daodiseo1..." 
   }
 }
 ```
@@ -819,7 +819,7 @@ pub struct ExecuteMsg {
 ```javascript
 {
   "id": 8, 
-  "creator": "terra1...", 
+  "creator": "daodiseo1...", 
   "status": "executed", 
   "end_height": 123456, 
   "title": "...", 
@@ -829,12 +829,12 @@ pub struct ExecuteMsg {
   "execute_data": [
     {
       "order": 1, 
-      "contract": "terra1...", 
+      "contract": "daodiseo1...", 
       "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
     }, 
     {
       "order": 2, 
-      "contract": "terra1...", 
+      "contract": "daodiseo1...", 
       "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
     }
   ], 
@@ -1009,7 +1009,7 @@ pub struct PollExecuteMsg {
   "polls": [
     {
       "id": 7, 
-      "creator": "terra1...", 
+      "creator": "daodiseo1...", 
       "status": "passed", 
       "end_height": 123456, 
       "title": "...", 
@@ -1018,11 +1018,11 @@ pub struct PollExecuteMsg {
       "deposit_amount": "100000000", 
       "execute_data": [
         {
-          "contract": "terra1...", 
+          "contract": "daodiseo1...", 
           "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
         }, 
         {
-          "contract": "terra1...", 
+          "contract": "daodiseo1...", 
           "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
         }
       ], 
@@ -1033,7 +1033,7 @@ pub struct PollExecuteMsg {
     }, 
     {
       "id": 8, 
-      "creator": "terra1...", 
+      "creator": "daodiseo1...", 
       "status": "executed", 
       "end_height": 123456, 
       "title": "...", 
@@ -1043,12 +1043,12 @@ pub struct PollExecuteMsg {
       "execute_data": [
         {
           "order": 1, 
-          "contract": "terra1...", 
+          "contract": "daodiseo1...", 
           "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
         }, 
         {
           "order": 2, 
-          "contract": "terra1...", 
+          "contract": "daodiseo1...", 
           "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
         }
       ], 
@@ -1125,7 +1125,7 @@ pub enum QueryMsg {
 {
   "voters": {
     "poll_id": 8, 
-    "start_after": "terra1..", 
+    "start_after": "daodiseo1..", 
     "limit": 8, 
     "order_by": "asc" 
   }
@@ -1179,12 +1179,12 @@ pub enum VoteOption {
 {
   "voters": [
     {
-      "voter": "terra1...", 
+      "voter": "daodiseo1...", 
       "vote": "yes", 
       "balance": "100000000" 
     }, 
     {
-      "voter": "terra1...", 
+      "voter": "daodiseo1...", 
       "vote": "no", 
       "balance": "100000000" 
     } 

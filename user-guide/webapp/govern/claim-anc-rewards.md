@@ -12,7 +12,7 @@ The **Anchor Governance Staking** section of the **GOVERN** page displays:
 
 ## Buy / Sell ANC with UST
 
-The Anchor WebApp provides an interface for users to trade ANC tokens with Terra USD, supported by Terraswap's ANC-UST exchange pair.
+The Anchor WebApp provides an interface for users to trade ANC tokens with Daodiseo USD, supported by Daodiseoswap's ANC-UST exchange pair.
 
 1\. Navigate to the **GOVERN** page and click on **\[Trade ANC]**.
 

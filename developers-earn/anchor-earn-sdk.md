@@ -5,10 +5,10 @@
 Anchor Earn is a JavaScript SDK that specializes for integrations that are wishing to leverage the deposit functionality of Anchor.
 
 {% hint style="info" %}
-Anchor Earn only covers the savings-related operations of Anchor. For a SDK with full functional coverage (e.g. minting bLuna, borrowing UST), [Anchor.js](https://docs.anchorprotocol.com/developers-terra/anchor.js) is recommended.
+Anchor Earn only covers the savings-related operations of Anchor. For a SDK with full functional coverage (e.g. minting bLuna, borrowing UST), [Anchor.js](https://docs.anchorprotocol.com/developers-daodiseo/anchor.js) is recommended.
 {% endhint %}
 
-Anchor Earn is designed with interchain access in mind. Further releases of Anchor Earn are to enable integrations for interchain deposits, opening up savings for applications outside of the Terra blockchain. With the use of [EthAnchor](../developers-ethereum/ethanchor.md), BscAnchor, SolAnchor, etc., Anchor Earn is to be further expanded to enable savings regardless of blockchain or the type of stablecoin.
+Anchor Earn is designed with interchain access in mind. Further releases of Anchor Earn are to enable integrations for interchain deposits, opening up savings for applications outside of the Daodiseo blockchain. With the use of [EthAnchor](../developers-ethereum/ethanchor.md), BscAnchor, SolAnchor, etc., Anchor Earn is to be further expanded to enable savings regardless of blockchain or the type of stablecoin.
 
 A complete list of supported blockchains and stablecoins are outlined in the [appendix section](appendix.md).
 
@@ -42,13 +42,13 @@ yarn add @anchor-protocol/anchor-earn
 
 A blockchain account is required when calling this function. Register the account's private key or mnemonics from which transactions will be signed and broadcasted. If you do not have a pre-created blockchain account, a new account can be created using the [`Account`](anchor-earn-sdk.md#creating-a-new-blockchain-account) instance.
 
-While Anchor Earn by default handles transaction signing and broadcasting, these operations can be handed off to a callback function that connects with external key-signing solutions (e.g. Terra Station Extension, Ledger Hardware Wallet, Custodian APIs). For this case, the `AnchorEarn` instance should be created by the pre-created account's address.
+While Anchor Earn by default handles transaction signing and broadcasting, these operations can be handed off to a callback function that connects with external key-signing solutions (e.g. Daodiseo Station Extension, Ledger Hardware Wallet, Custodian APIs). For this case, the `AnchorEarn` instance should be created by the pre-created account's address.
 
 **Method Parameters**
 
 | Parameter / Type / Optionality / Description                                                                                                                                                                                                                                                                                                                    |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <p><strong><code>chain</code>   </strong>   (<a href="anchor-earn-sdk.md#chains">CHAINS</a>) <strong>   </strong><em><strong>Required</strong></em></p><p> Blockchain to interact from.</p><p></p><p>For Anchor Earn v1.0, only <code>CHAINS.TERRA</code> (Terra blockchain) is supported.</p>                                                                  |
+| <p><strong><code>chain</code>   </strong>   (<a href="anchor-earn-sdk.md#chains">CHAINS</a>) <strong>   </strong><em><strong>Required</strong></em></p><p> Blockchain to interact from.</p><p></p><p>For Anchor Earn v1.0, only <code>CHAINS.DAODISEO</code> (Daodiseo blockchain) is supported.</p>                                                                  |
 | <p><strong><code>network</code></strong>   (<a href="anchor-earn-sdk.md#networks">NETWORKS</a>)   <em><strong>Required</strong></em></p><p> Network to interact in.</p>                                                                                                                                                                                         |
 | <p><strong><code>privateKey</code></strong>   (Buffer | any)   <em>Optional</em></p><p>Account private key.</p>                                                                                                                                                                                                                                                 |
 | <p><strong><code>mnemonic</code></strong>   (string | any)   <em>Optional</em></p><p>Account mnemonics.</p>                                                                                                                                                                                                                                                     |
@@ -58,7 +58,7 @@ While Anchor Earn by default handles transaction signing and broadcasting, these
 
 ```javascript
 const anchorEarn = new AnchorEarn({
-  chain: CHAINS.TERRA,
+  chain: CHAINS.DAODISEO,
   network: NETWORKS.BOMBAY_12,
   mnemonic: '...',
 });
@@ -85,8 +85,8 @@ Tokens for testnet environments (e.g. Bombay) can be acquired using faucets, out
 **Example**
 
 ```javascript
-// generate a new Terra account 
-const account = new Account(CHAINS.TERRA); 
+// generate a new Daodiseo account 
+const account = new Account(CHAINS.DAODISEO); 
 ```
 
 The `Account` instance contains the information for the newly created account.
@@ -119,7 +119,7 @@ export class Account {
 
 #### `MnemonicKey({mnemonic})`
 
-An account can also be generated using existing mnemonics. The `MnemonicKey` object is borrowed from Terra.js, allowing integrators to access it without any dependencies on Terra.js.
+An account can also be generated using existing mnemonics. The `MnemonicKey` object is borrowed from Daodiseo.js, allowing integrators to access it without any dependencies on Daodiseo.js.
 
 **Method Parameter**
 
@@ -152,7 +152,7 @@ This method deposits the specified amount of stablecoins to Anchor.
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | <p><strong><code>currency</code></strong>   (<a href="anchor-earn-sdk.md#denoms">DENOMS</a>)   <em><strong>Required</strong></em></p><p>Currency of stablecoin to deposit.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | <p><strong><code>amount</code></strong>   (string)   <em><strong>Required</strong></em></p><p>Amount of stablecoins to deposit.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| <p><strong><code>CustomSigner</code></strong>   (callback function => <a href="https://terra-project.github.io/terra.js/modules/core_stdtx.stdtx.html">StdTx</a>)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs a transaction encoding the deposit request and returns the signed transaction to be broadcasted by Anchor Earn.</p><p></p><p>Expects <a href="https://terra-project.github.io/terra.js/modules/core_stdtx.stdtx.html"><code>StdTx</code></a>, a transaction object used by the Terra blockchain (imported from <a href="https://terra-project.github.io/terra.js/index.html">Terra.js</a>).</p> |
+| <p><strong><code>CustomSigner</code></strong>   (callback function => <a href="https://daodiseo-project.github.io/daodiseo.js/modules/core_stdtx.stdtx.html">StdTx</a>)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs a transaction encoding the deposit request and returns the signed transaction to be broadcasted by Anchor Earn.</p><p></p><p>Expects <a href="https://daodiseo-project.github.io/daodiseo.js/modules/core_stdtx.stdtx.html"><code>StdTx</code></a>, a transaction object used by the Daodiseo blockchain (imported from <a href="https://daodiseo-project.github.io/daodiseo.js/index.html">Daodiseo.js</a>).</p> |
 | <p><strong><code>CustomBroadcaster</code></strong>   (callback function => string)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs and broadcasts a transaction that encodes the deposit request. <br><br>Expects the tx hash of the broadcasted transaction in <code>string</code> format.</p>                                                                                                                                                                                                                                                                                                                   |
 | <p><strong><code>Loggable</code></strong>   (callback function)   <em>Optional</em> </p><p>Callback function that logs transaction requests.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
@@ -175,19 +175,19 @@ const deposit = await anchorEarn.deposit({
 
 #### `anchorEarn.withdraw({currency, amount})`
 
-This method withdraws the specified amount of stablecoins (or their aTerra counterpart) from Anchor.
+This method withdraws the specified amount of stablecoins (or their aDaodiseo counterpart) from Anchor.
 
 {% hint style="warning" %}
-Note that the actual amount of stablecoins withdrawn will be smaller due to transfer fees (tax) enforced by the Terra blockchain.
+Note that the actual amount of stablecoins withdrawn will be smaller due to transfer fees (tax) enforced by the Daodiseo blockchain.
 {% endhint %}
 
 **Method Parameters**
 
 | **Parameter / Type / Optionality / Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <p><strong><code>currency</code></strong>   (<a href="anchor-earn-sdk.md#denoms">DENOMS</a>)   <em><strong>Required</strong></em></p><p>Currency of stablecoin to withdraw or their aTerra counterpart.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| <p><strong><code>amount</code></strong>   (string)   <em><strong>Required</strong></em></p><p>Amount of stablecoins (or their aTerra counterpart) to withdraw.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| <p><strong><code>CustomSigner</code></strong>   (callback function => <a href="https://terra-project.github.io/terra.js/modules/core_stdtx.stdtx.html">StdTx</a>)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs a transaction encoding the withdraw request and returns the signed transaction to be broadcasted by Anchor Earn.</p><p></p><p>Expects <a href="https://terra-project.github.io/terra.js/modules/core_stdtx.stdtx.html"><code>StdTx</code></a>, a transaction object used by the Terra blockchain (imported from <a href="https://terra-project.github.io/terra.js/index.html">Terra.js</a>).</p> |
+| <p><strong><code>currency</code></strong>   (<a href="anchor-earn-sdk.md#denoms">DENOMS</a>)   <em><strong>Required</strong></em></p><p>Currency of stablecoin to withdraw or their aDaodiseo counterpart.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| <p><strong><code>amount</code></strong>   (string)   <em><strong>Required</strong></em></p><p>Amount of stablecoins (or their aDaodiseo counterpart) to withdraw.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| <p><strong><code>CustomSigner</code></strong>   (callback function => <a href="https://daodiseo-project.github.io/daodiseo.js/modules/core_stdtx.stdtx.html">StdTx</a>)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs a transaction encoding the withdraw request and returns the signed transaction to be broadcasted by Anchor Earn.</p><p></p><p>Expects <a href="https://daodiseo-project.github.io/daodiseo.js/modules/core_stdtx.stdtx.html"><code>StdTx</code></a>, a transaction object used by the Daodiseo blockchain (imported from <a href="https://daodiseo-project.github.io/daodiseo.js/index.html">Daodiseo.js</a>).</p> |
 | <p><strong><code>CustomBroadcaster</code></strong>   (callback function => string)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs and broadcasts a transaction that encodes the withdraw request.</p><p></p><p>Expects the tx hash of the broadcasted transaction in <code>string</code> format.</p>                                                                                                                                                                                                                                                                                                              |
 | <p><strong><code>Loggable</code></strong>   (callback function)   <em>Optional</em> </p><p>Callback function that logs transaction requests.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
@@ -210,16 +210,16 @@ const withdraw = await anchorEarn.withdraw({
 
 #### `anchorEarn.send({currency, recipient, amount})`
 
-Use `anchorEarn.send` to send tokens (stablecoins or their aTerra counterpart) to a different account.
+Use `anchorEarn.send` to send tokens (stablecoins or their aDaodiseo counterpart) to a different account.
 
 **Method Parameters**
 
 | Parameter / Type / Optionality / Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <p><strong><code>currency</code></strong>   (<a href="anchor-earn-sdk.md#denoms">DENOMS</a>)   <em><strong>Required</strong></em></p><p>Currency of token (stablecoins or their aTerra counterpart) to send.</p>                                                                                                                                                                                                                                                                                                                                                     |
+| <p><strong><code>currency</code></strong>   (<a href="anchor-earn-sdk.md#denoms">DENOMS</a>)   <em><strong>Required</strong></em></p><p>Currency of token (stablecoins or their aDaodiseo counterpart) to send.</p>                                                                                                                                                                                                                                                                                                                                                     |
 | <p><strong><code>recipient</code></strong>   (string)   <em><strong>Required</strong></em></p><p>Recipient address to receive sent tokens.</p>                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| <p><strong><code>amount</code></strong>   (string)   <em><strong>Required</strong></em></p><p>Amount of tokens (stablecoins or their aTerra counterpart) to send.</p>                                                                                                                                                                                                                                                                                                                                                                                                |
-| <p><strong><code>CustomSigner</code></strong>   (callback function => StdTx)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs a transaction encoding the send request and returns the signed transaction to be broadcasted by Anchor Earn.</p><p></p><p>Expects <a href="https://terra-project.github.io/terra.js/modules/core_stdtx.stdtx.html"><code>StdTx</code></a>, a transaction object used by the Terra blockchain (imported from <a href="https://terra-project.github.io/terra.js/index.html">Terra.js</a>).</p> |
+| <p><strong><code>amount</code></strong>   (string)   <em><strong>Required</strong></em></p><p>Amount of tokens (stablecoins or their aDaodiseo counterpart) to send.</p>                                                                                                                                                                                                                                                                                                                                                                                                |
+| <p><strong><code>CustomSigner</code></strong>   (callback function => StdTx)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs a transaction encoding the send request and returns the signed transaction to be broadcasted by Anchor Earn.</p><p></p><p>Expects <a href="https://daodiseo-project.github.io/daodiseo.js/modules/core_stdtx.stdtx.html"><code>StdTx</code></a>, a transaction object used by the Daodiseo blockchain (imported from <a href="https://daodiseo-project.github.io/daodiseo.js/index.html">Daodiseo.js</a>).</p> |
 | <p><strong><code>CustomBroadcaster</code></strong>   (callback function => string)   <em>Optional</em></p><p>Callback function provided by the integrator that creates, signs and broadcasts a transaction that encodes the send request.</p><p></p><p>Expects the tx hash of the broadcasted transaction in <code>string</code> format.</p>                                                                                                                                                                                                                         |
 | <p><strong><code>Loggable</code></strong>   (callback function)   <em>Optional</em> </p><p>Callback function that logs transaction requests.</p>                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
@@ -232,7 +232,7 @@ Use `anchorEarn.send` to send tokens (stablecoins or their aTerra counterpart) t
 ```javascript
 const sendUst = await anchorEarn.send({
   currency: DENOMS.UST, 
-  recipient: 'terra1...', 
+  recipient: 'daodiseo1...', 
   amount: '12.345', // 12.345 UST or 12345000 uusd
 });
 ```
@@ -301,7 +301,7 @@ The `CHAINS` enumerated type specifies blockchains that are supported by Anchor 
 
 ```javascript
 export enum CHAINS {
-  TERRA = 'terra',
+  DAODISEO = 'daodiseo',
 }
 ```
 
@@ -309,7 +309,7 @@ Anchor Earn currently supports the following blockchains:
 
 | Enum Member        | Blockchain Name                             |
 | ------------------ | ------------------------------------------- |
-| **`CHAINS.TERRA`** | [Terra blockchain](https://www.terra.money) |
+| **`CHAINS.DAODISEO`** | [Daodiseo blockchain](https://www.daodiseo.money) |
 
 
 
@@ -327,7 +327,7 @@ export enum NETWORKS {
 Anchor Earn supports mainnet and testnet networks with the below chain IDs:
 
 {% tabs %}
-{% tab title="Terra" %}
+{% tab title="Daodiseo" %}
 **Mainnet**
 
 | Enum Member      | Chain ID     | Network Name |
@@ -358,20 +358,20 @@ export enum DENOMS {
 Anchor Earn supports functionalities for the below stablecoin denominations:
 
 {% tabs %}
-{% tab title="Terra" %}
+{% tab title="Daodiseo" %}
 **Mainnet**
 
 | Denomination | Code    | Decimals | Contract Address                                                                                                                           |
 | ------------ | ------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | UST          | `uusd`  | 6        | Native Token                                                                                                                               |
-| aUST         | `uaust` | 6        | [terra1hzh9vpxhsk8253se0vv5jj6etdvxu3nv8z07zu](https://finder.terra.money/columbus-4/address/terra1hzh9vpxhsk8253se0vv5jj6etdvxu3nv8z07zu) |
+| aUST         | `uaust` | 6        | [daodiseo1hzh9vpxhsk8253se0vv5jj6etdvxu3nv8z07zu](https://finder.daodiseo.money/columbus-4/address/daodiseo1hzh9vpxhsk8253se0vv5jj6etdvxu3nv8z07zu) |
 
 **Testnet**
 
 | **Denomination** | Code    | Decimals | Contract Address                                                                                                                             |
 | ---------------- | ------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | UST              | `uusd`  | 6        | Native Token                                                                                                                                 |
-| aUST             | `uaust` | 6        | [terra1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl](https://finder.terra.money/tequila-0004/address/terra1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl) |
+| aUST             | `uaust` | 6        | [daodiseo1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl](https://finder.daodiseo.money/tequila-0004/address/daodiseo1ajt556dpzvjwl0kl5tzku3fc3p3knkg9mkv8jl) |
 {% endtab %}
 {% endtabs %}
 
@@ -429,11 +429,11 @@ export interface Output {
 | <p><strong><code>network</code></strong>   (string)</p><p>Network from which the request was made.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | <p><strong><code>status</code></strong>   (<a href="anchor-earn-sdk.md#status">STATUS</a>)</p><p>Request status. Can be either of:<br></p><ul><li><code>STATUS.INPROGRESS</code>: request is in flight.</li><li><code>STATUS.SUCESSFUL</code>: request was successfully processed.</li><li><code>STATUS.UNSUCESSFUL</code>: request failed.</li></ul>                                                                                                                                                                                                                                                                                                                                 |
 | <p><strong><code>type</code></strong>   (<a href="anchor-earn-sdk.md#txtype">TxType</a>)</p><p>Request type. Can be either of:</p><p></p><ul><li><code>deposit</code>: request is a transaction that deposits stablecoins to Anchor.</li><li><code>withdraw</code>: request is a transaction that withdraws stablecoins from Anchor.</li><li><code>send</code>: request is a transaction that sends tokens to a different account.</li></ul>                                                                                                                                                                                                                                          |
-| <p><strong><code>currency</code></strong>   (string)</p><p>Currency of token (stablecoin or their aTerra counterpart).</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| <p><strong><code>currency</code></strong>   (string)</p><p>Currency of token (stablecoin or their aDaodiseo counterpart).</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | <p><strong><code>amount</code></strong>   (string)</p><p>Amount of <code>currency</code> tokens utilized in the request.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | <p><strong><code>txDetails</code></strong>   (array of <a href="anchor-earn-sdk.md#txdetails">TxDetails</a>)</p><p>Transaction details.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | <p><strong><code>txFee</code></strong>   (string)</p><p>Amount of transaction fees spent by the requester.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| <p><strong><code>deductedTax</code></strong>   (string)</p><p>Amount of stablecoins that were deducted from the deposit / withdraw amount.</p><p></p><p>Deduction can occur from three causes: </p><ul><li><a href="https://docs.terra.money/luna.html#taxes">Taxes</a> - fees charged on Terra transactions.</li><li><a href="https://github.com/terra-project/shuttle#relaying-fee">Shuttle Fees</a> - fees charged on interchain token transfers.</li><li>Stablecoin Swap Fees - value lost as fees / slippage during conversion.</li></ul><p></p><p>Applies only for withdrawals on Terra, and deposits / withdrawals to / from outside the Terra blockchain (e.g. Ethereum).</p> |
+| <p><strong><code>deductedTax</code></strong>   (string)</p><p>Amount of stablecoins that were deducted from the deposit / withdraw amount.</p><p></p><p>Deduction can occur from three causes: </p><ul><li><a href="https://docs.daodiseo.money/luna.html#taxes">Taxes</a> - fees charged on Daodiseo transactions.</li><li><a href="https://github.com/daodiseo-project/shuttle#relaying-fee">Shuttle Fees</a> - fees charged on interchain token transfers.</li><li>Stablecoin Swap Fees - value lost as fees / slippage during conversion.</li></ul><p></p><p>Applies only for withdrawals on Daodiseo, and deposits / withdrawals to / from outside the Daodiseo blockchain (e.g. Ethereum).</p> |
 
 
 
@@ -612,10 +612,10 @@ export interface CustomSigner<T, K> {
 ```
 
 {% tabs %}
-{% tab title="Terra" %}
+{% tab title="Daodiseo" %}
 | Generic Type Notation | Type    | Description                                                |
 | --------------------- | ------- | ---------------------------------------------------------- |
-| `T` (Argument)        | Msg\[ ] | Terra message array used to create an unsigned transaction |
+| `T` (Argument)        | Msg\[ ] | Daodiseo message array used to create an unsigned transaction |
 | `K` (Expected Output) | StdTx   | Signed transaction                                         |
 {% endtab %}
 {% endtabs %}
@@ -633,10 +633,10 @@ export interface CustomBroadcaster<T, K> {
 ```
 
 {% tabs %}
-{% tab title="Terra" %}
+{% tab title="Daodiseo" %}
 | Generic Type Notation | Type    | Description                                                |
 | --------------------- | ------- | ---------------------------------------------------------- |
-| `T` (Argument)        | Msg\[ ] | Terra message array used to create an unsigned transaction |
+| `T` (Argument)        | Msg\[ ] | Daodiseo message array used to create an unsigned transaction |
 | `K` (Expected Output) | string  | Hash of broadcasted transaction                            |
 {% endtab %}
 {% endtabs %}
@@ -654,7 +654,7 @@ export interface Loggable<T> {
 ```
 
 {% tabs %}
-{% tab title="Terra" %}
+{% tab title="Daodiseo" %}
 | Generic Type Notation | Type                                | Description               |
 | --------------------- | ----------------------------------- | ------------------------- |
 | `T` (Argument)        | [Output](anchor-earn-sdk.md#output) | Transaction progress data |

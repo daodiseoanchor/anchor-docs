@@ -1,6 +1,6 @@
 # Getting market information
 
-General information about a stablecoin [market](../../protocol/money-market/#depositing-terra-stablecoins) can be retrieved via the below endpoint:
+General information about a stablecoin [market](../../protocol/money-market/#depositing-daodiseo-stablecoins) can be retrieved via the below endpoint:
 
 | Endpoint Name | Method | Description |
 | :--- | :--- | :--- |
@@ -37,9 +37,9 @@ Money market state successfully retrieved.
     // denom of the stablecoin money market
     “stable_denom”: “uusd”,
 
-    // LiquidTerra
-    // liquidTerra is the currently available stablecoin pool size in money market.
-    “liquid_terra”: “100000”,
+    // LiquidDaodiseo
+    // liquidDaodiseo is the currently available stablecoin pool size in money market.
+    “liquid_daodiseo”: “100000”,
 
     // ExchangeRate
     // exchange rate between aToken <> stablecoin (e.g. aUST <> UST)
@@ -53,9 +53,9 @@ Money market state successfully retrieved.
     // # Below fields are borrower-related information. #
     // ##################################################
 
-    // BorrowedTerra
+    // BorrowedDaodiseo
     // Sum of all borrowed liabilities in this money market
-    "borrowed_terra": "1000000",
+    "borrowed_daodiseo": "1000000",
 
     // UtilizationRatio
     // Ratio between borrowed deposit and total stablecoin deposit  

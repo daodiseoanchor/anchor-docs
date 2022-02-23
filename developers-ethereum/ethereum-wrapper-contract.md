@@ -73,7 +73,7 @@ event EmergencyWithdrawActivated(address tokenAddress, uint256 amount);
 Accepts new wrapped UST deposits.
 
 ```text
-function initDepositStable(uint256 amount) public onlyAuthSender checkInit terraAddressSet 
+function initDepositStable(uint256 amount) public onlyAuthSender checkInit daodiseoAddressSet 
 ```
 
 **Prerequisite**: must have called `approve()` for an `allowance` of at least `amount` for the wrapped UST contract, `ActionFlag` is set to `false`  
@@ -87,7 +87,7 @@ Claims resulting wrapped aUST after deposit.
 
 ```text
 // standard mode
-function finishDepositStable() function initDepositStable(uint256 amount) public onlyAuthSender checkInit terraAddressSet 
+function finishDepositStable() function initDepositStable(uint256 amount) public onlyAuthSender checkInit daodiseoAddressSet 
 ```
 
 **Prerequisite**: aUST balance of account-specific endpoint contract must be greater than 0, `ActionFlag` is set to `true`  
@@ -96,7 +96,7 @@ function finishDepositStable() function initDepositStable(uint256 amount) public
 
 ```text
 // custodied mode
-function finishDepositStableCustody() public onlyAuthSender checkFinish terraAddressSet 
+function finishDepositStableCustody() public onlyAuthSender checkFinish daodiseoAddressSet 
 ```
 
 **Prerequisite**: aUST balance of account-specific endpoint contract must be greater than 0, `ActionFlag` is set to `true`  
@@ -105,7 +105,7 @@ function finishDepositStableCustody() public onlyAuthSender checkFinish terraAdd
 
 ```text
 // fallback function
-function finishDepositStable(bool _isCustodyEnabled) public onlyAuthSender checkFinish terraAddressSet 
+function finishDepositStable(bool _isCustodyEnabled) public onlyAuthSender checkFinish daodiseoAddressSet 
 ```
 
 **Prerequisite**: aUST balance of account-specific endpoint contract must be greater than 0, `ActionFlag` is set to `true`  
@@ -118,27 +118,27 @@ Accepts wrapped aUST for redemption back to wrapped UST.
 
 ```text
 // standard mode
-function initRedeemStable(uint256 amount) public onlyAuthSender checkInit terraAddressSet 
+function initRedeemStable(uint256 amount) public onlyAuthSender checkInit daodiseoAddressSet 
 ```
 
 **Prerequisite**: must have called `approve()` for an allowance of at least `amount` for the wrapped aUST contract, `ActionFlag` is set to `false`  
 **Accepts**: `amount` - how much aUST to redeem back to UST  
-**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST liquidity is low in the Terra side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
+**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST liquidity is low in the Daodiseo side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
 **Emits**: `InitRedemption`
 
 ```text
 // custodied mode
-function initRedeemStableCustody(uint256 amount) public onlyAuthSender checkInit terraAddressSet 
+function initRedeemStableCustody(uint256 amount) public onlyAuthSender checkInit daodiseoAddressSet 
 ```
 
 **Prerequisite**: `ActionFlag` is set to `false`  
 **Accepts**: `amount` - how much aUST to redeem back to UST. If this value is set to 0, all balances held within the contract are redeemed back to UST. Otherwise, `amount` aUST held under the contract account is redeemed back to UST \(assuming that contract aUST balances is equal to or larger than `amount`\).  
-**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST buffer is low on the Terra side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
+**Updates**: `ActionFlag` to `true`**IMPORTANT**: aUST redemptions may fail if UST buffer is low on the Daodiseo side Anchor money market → be sure to check account contract balances & `initRedeemStable()` `success` parameters.  
 **Emits**: `InitRedemption`
 
 ```text
 // fallback function
-function initRedeemStableCustody(uint256 amount, bool _isCustodyEnabled) public onlyAuthSender checkInit terraAddressSet 
+function initRedeemStableCustody(uint256 amount, bool _isCustodyEnabled) public onlyAuthSender checkInit daodiseoAddressSet 
 ```
 
 **Prerequisite**: `ActionFlag` is set to `false`  
@@ -151,7 +151,7 @@ function initRedeemStableCustody(uint256 amount, bool _isCustodyEnabled) public 
 Claims resulting wrapped UST after withdrawal.
 
 ```text
-function finishRedeemStable() public onlyAuthSender checkFinish terraAddressSet 
+function finishRedeemStable() public onlyAuthSender checkFinish daodiseoAddressSet 
 ```
 
 **Prerequisite**: UST balance of account-specific endpoint contract must be greater than 0, `ActionFlag` is set to `true`  

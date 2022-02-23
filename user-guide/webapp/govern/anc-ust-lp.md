@@ -2,7 +2,7 @@
 
 High exchange liquidity of ANC tokens is crucial for retaining strong deposit rate stability via ANC-incentivized borrowing. It is also critical for Anchor Governance, as a low ANC exchange liquidity enables malicious entities to gain a sufficient supply of ANC and manipulate governance poll results.
 
-As such, a small portion of the ANC supply have been allocated on protocol genesis as incentives for users that provide exchange liquidity to ANC tokens, specifically to the **ANC-UST Terraswap pair**. ANC incentives for ANC liquidity providers are distributed through the use of Terraswap Liquidity Provider tokens.
+As such, a small portion of the ANC supply have been allocated on protocol genesis as incentives for users that provide exchange liquidity to ANC tokens, specifically to the **ANC-UST Daodiseoswap pair**. ANC incentives for ANC liquidity providers are distributed through the use of Daodiseoswap Liquidity Provider tokens.
 
 Terraswap's Liquidity Provider tokens, or **LP Tokens**, are minted uniquely to each exchange pair type and represent a liquidity provider's share of liquidity contribution to the pair. Anchor measures the degree of ANC liquidity contribution by distributing ANC rewards pro-rata to the amount of ANC-UST LP tokens staked to the protocol.
 

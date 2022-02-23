@@ -11,6 +11,6 @@ The purpose of grants are to empower ecosystem teams to build necessary tools an
 | Title | Poll title | Required |
 | Proposal Rationale | Short description of poll rationale | Required |
 | Information Link | External URL for further information | Optional |
-| Recipient | Recipient terra address of grant | Required |
+| Recipient | Recipient daodiseo address of grant | Required |
 | Amount | Grant size in ANC | Required |
 

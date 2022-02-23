@@ -1,6 +1,6 @@
 # ExchangeRateFeeder
 
-The ExchangeRateFeeder contract is responsible for calculating and determining the exchange rate between an Ethereum stablecoin and their aTerra counterpart. 
+The ExchangeRateFeeder contract is responsible for calculating and determining the exchange rate between an Ethereum stablecoin and their aDaodiseo counterpart. 
 
 ## Events
 
@@ -44,7 +44,7 @@ enum Status {NEUTRAL, RUNNING, STOPPED}
 
 ### `Token`
 
-Represents information for an aTerra token.
+Represents information for an aDaodiseo token.
 
 ```text
 struct Token {
@@ -68,7 +68,7 @@ struct Token {
 
 ### `exchangeRateOf`
 
-Gets the exchange rate for the specified aTerra token. Returns a simulated value \(reflects yield accrued since last exchange rate update\) if `_simulate` is set as `true`. Returns the last updated exchange rate value is `_simulate` is set as `false`.
+Gets the exchange rate for the specified aDaodiseo token. Returns a simulated value \(reflects yield accrued since last exchange rate update\) if `_simulate` is set as `true`. Returns the last updated exchange rate value is `_simulate` is set as `false`.
 
 ```text
 function exchangeRateOf(
@@ -79,12 +79,12 @@ function exchangeRateOf(
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `_token` | address | Address of aTerra token to retrieve exchange rate |
+| `_token` | address | Address of aDaodiseo token to retrieve exchange rate |
 | `_simulate` | bool | Indicator on whether to return a interest-accrued value |
 
 ### `update`
 
-Updates the exchange rate for specified aTerra token.
+Updates the exchange rate for specified aDaodiseo token.
 
 ```text
 function update(address _token) external;
@@ -92,5 +92,5 @@ function update(address _token) external;
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `_token` | address | Address of aTerra token to update exchange rate |
+| `_token` | address | Address of aDaodiseo token to update exchange rate |
 

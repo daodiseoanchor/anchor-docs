@@ -1,6 +1,6 @@
 # Converter
 
-The Converter contract is used to convert between wrapped bAsset tokens (wrapped tokens transferred to Terra via Wormhole bridge) and Anchor collateral bAsset tokens (token registered as Anchor collateral).
+The Converter contract is used to convert between wrapped bAsset tokens (wrapped tokens transferred to Daodiseo via Wormhole bridge) and Anchor collateral bAsset tokens (token registered as Anchor collateral).
 
 The existence of two bAsset tokens is due reward-accruing functionalities required for Anchor collateral tokens, which is not available on Wormhole wrapped tokens (automatically created by Wormhole bridge).&#x20;
 
@@ -48,7 +48,7 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```json
 {
-  "owner": "terra1..." 
+  "owner": "daodiseo1..." 
 }
 ```
 
@@ -89,7 +89,7 @@ pub enum ExecuteMsg {
 ```json
 {
   "receive": {
-    "sender": "terra1...",
+    "sender": "daodiseo1...",
     "amount": "10000000",
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmxhaCBibGFoIiB9"
   }
@@ -131,8 +131,8 @@ pub enum ExecuteMsg {
 ```json
 {
   "register_tokens": {
-    "wormhole_token_address": "terra1...", 
-    "anchor_token_address": "terra1..." 
+    "wormhole_token_address": "daodiseo1...", 
+    "anchor_token_address": "daodiseo1..." 
   }
 }
 ```
@@ -269,9 +269,9 @@ pub struct ConfigResponse {
 
 ```rust
 {
-  "owner": "terra1...", 
-  "wormhole_token_address": "terra1...", 
-  "anchor_token_address": "terra1..." 
+  "owner": "daodiseo1...", 
+  "wormhole_token_address": "daodiseo1...", 
+  "anchor_token_address": "daodiseo1..." 
 }
 ```
 

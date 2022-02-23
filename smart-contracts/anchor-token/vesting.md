@@ -27,8 +27,8 @@ pub struct InitMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
-  "anchor_token": "terra1...", 
+  "owner": "daodiseo1...", 
+  "anchor_token": "daodiseo1...", 
   "genesis_time": 123456, 
 }
 ```
@@ -66,8 +66,8 @@ pub enum HandleMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1...", 
-    "anchor_token": "terra1...", 
+    "owner": "daodiseo1...", 
+    "anchor_token": "daodiseo1...", 
     "genesis_time": 123456 
   }
 }
@@ -112,11 +112,11 @@ pub struct VestingAccount {
   "register_vesting_accounts": {
     "vesting_accounts": [
       {
-        "address": "terra1...", 
+        "address": "daodiseo1...", 
         "schedules": [123456, 234567, "10000000"]
       }, 
       {
-        "address": "terra1...", 
+        "address": "daodiseo1...", 
         "schedules": [123456, 234567, "10000000"]
       }
     ]
@@ -210,8 +210,8 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
-  "anchor_token": "terra1...", 
+  "owner": "daodiseo1...", 
+  "anchor_token": "daodiseo1...", 
   "genesis_time": 123456 
 }
 ```
@@ -245,7 +245,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "vesting_account": {
-    "address": "terra1..." 
+    "address": "daodiseo1..." 
   }
 }
 ```
@@ -278,7 +278,7 @@ pub struct VestingInfo {
 {% tab title="JSON" %}
 ```javascript
 {
-  "address": "terra1...", 
+  "address": "daodiseo1...", 
   "info": {
     "schedules": [123456, 234567, "10000000"], 
     "last_claim_time": 123456, 
@@ -328,7 +328,7 @@ pub enum OrderBy {
 ```javascript
 {
   "vesting_accounts": {
-    "start_after": "terra1...", 
+    "start_after": "daodiseo1...", 
     "limit": 8, 
     "order_by": "asc"
   }
@@ -379,14 +379,14 @@ pub struct VestingInfo {
 {
   "vesting_accounts": [
     {
-      "address": "terra1...", 
+      "address": "daodiseo1...", 
       "info": {
         "schedules": [123456, 234567, "10000000"], 
         "last_claim_time": 123456 
       }
     }, 
     {
-      "address": "terra1...", 
+      "address": "daodiseo1...", 
       "info": {
         "schedules": [123456, 234567, "10000000"], 
         "last_claim_time": 123456 

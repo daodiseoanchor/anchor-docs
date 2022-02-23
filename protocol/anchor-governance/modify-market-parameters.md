@@ -6,7 +6,7 @@ Modifying the `Target Deposit Rate`, known as the Anchor Rate adjusts Anchor's t
 
 The `Threshold Deposit Rate` value is the minimum deposit APY that Anchor tries to ensure by making direct deposit rate subsidizations from the yield reserve if the current deposit rate is observed to be below this value. Interest buffer usage from direct subsidization events are limited to a `Buffer Distribution Factor` portion of the yield reserve's balance per subsidization event.
 
-In cases of excessive and uncontrollable borrow demand, the `Max Borrow Factor`, which limits the amount of stablecoin liquidity available to be borrowed, can be adjusted to allow aTerra redemptions to occur.
+In cases of excessive and uncontrollable borrow demand, the `Max Borrow Factor`, which limits the amount of stablecoin liquidity available to be borrowed, can be adjusted to allow aDaodiseo redemptions to occur.
 
 The money market is configured to be somewhat resilient to price oracle downtimes, where price values are considered invalid if they are older than `Valid Price Timeframe`.
 

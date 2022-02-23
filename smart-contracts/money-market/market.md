@@ -8,7 +8,7 @@ The Market contract acts as the point of interaction for all lending and borrowi
 | :--- | :--- | :--- |
 | `contract_addr` | CanonicalAddr | Address of itself \(Market contract\) |
 | `owner_addr` | CanonicalAddr | Address of contract owner that can update config |
-| `aterra_contract` | CanonicalAddr | Contract address of aTerra |
+| `adaodiseo_contract` | CanonicalAddr | Contract address of aDaodiseo |
 | `interest_model` | CanonicalAddr | Contract address of Interest Model |
 | `distribution_model` | CanonicalAddr | Contract address of Distribution Model |
 | `overseer_contract` | CanonicalAddr | Contract address of Overseer |
@@ -19,7 +19,7 @@ The Market contract acts as the point of interaction for all lending and borrowi
 
 ## InstantiateMsg
 
-Instantiates the money market Market contract. Requires the owner to make an initial deposit of 1 Terra stablecoin and mints 1 aTerra to the Market contract \(inaccessible\). The creator's initial stablecoin deposit ensures the aTerra supply to always be a high enough value to prevent rounding errors in the aTerra exchange rate calculation.
+Instantiates the money market Market contract. Requires the owner to make an initial deposit of 1 Daodiseo stablecoin and mints 1 aDaodiseo to the Market contract \(inaccessible\). The creator's initial stablecoin deposit ensures the aDaodiseo supply to always be a high enough value to prevent rounding errors in the aDaodiseo exchange rate calculation.
 
 {% tabs %}
 {% tab title="Rust" %}
@@ -29,7 +29,7 @@ Instantiates the money market Market contract. Requires the owner to make an ini
 pub struct InstantiateMsg {
     pub owner_addr: String, 
     pub stable_denom: String, 
-    pub aterra_code_id: u64, 
+    pub adaodiseo_code_id: u64, 
     pub anc_emission_rate: Decimal256, 
     pub max_borrow_factor: Decimal256, 
 }
@@ -39,9 +39,9 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner_addr": "terra1...", 
-  "stable_denom": "uusd", // Terra USD
-  "aterra_code_id": 5, 
+  "owner_addr": "daodiseo1...", 
+  "stable_denom": "uusd", // Daodiseo USD
+  "adaodiseo_code_id": 5, 
   "anc_emission_rate": "0.05", 
   "max_borrow_factor": "0.95" 
 }
@@ -53,7 +53,7 @@ pub struct InstantiateMsg {
 | :--- | :--- | :--- |
 | `owner_addr` | String | Address of contract owner |
 | `stable_denom` | String | Native token denomination for stablecoin |
-| `aterra_code_id` | u64 | Code ID for aTerra contract |
+| `adaodiseo_code_id` | u64 | Code ID for aDaodiseo contract |
 | `anc_emission_rate` | Decimal256 | Initial per-block ANC emission rate to borrowers |
 | `max_borrow_factor` | Decimal256 | Maximum portion of stablecoin liquidity available for borrows |
 
@@ -82,7 +82,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "receive": {
-    "sender": "terra1...",
+    "sender": "daodiseo1...",
     "amount": "10000000",
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmxhaCBibGFoIiB9"
   }
@@ -122,11 +122,11 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "register_contracts": {
-    "overseer_contract": "terra1...", 
-    "interest_model": "terra1...", 
-    "distribution_model": "terra1...", 
-    "collector_contract": "terra1...", 
-    "distributor_contract": "terra1..." 
+    "overseer_contract": "daodiseo1...", 
+    "interest_model": "daodiseo1...", 
+    "distribution_model": "daodiseo1...", 
+    "collector_contract": "daodiseo1...", 
+    "distributor_contract": "daodiseo1..." 
   }
 }
 ```
@@ -141,9 +141,9 @@ pub enum ExecuteMsg {
 | `collector_contract` | String | Contract address of Collector |
 | `distributor_contract` | String | Contract address of Distributor |
 
-### `[Internal] RegisterATerra`
+### `[Internal] RegisterADaodiseo`
 
-Registers the contract address of `aTerra` Cw20 Token contract. Issued by `aTerra` after initialization.
+Registers the contract address of `aDaodiseo` Cw20 Token contract. Issued by `aDaodiseo` after initialization.
 
 {% tabs %}
 {% tab title="Rust" %}
@@ -151,7 +151,7 @@ Registers the contract address of `aTerra` Cw20 Token contract. Issued by `aTerr
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 #[serde(rename_all = "snake_case")]
 pub enum ExecuteMsg {
-    RegisterATerra {}
+    RegisterADaodiseo {}
 }
 ```
 {% endtab %}
@@ -159,7 +159,7 @@ pub enum ExecuteMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "register_a_terra": {}
+  "register_a_daodiseo": {}
 }
 ```
 {% endtab %}
@@ -193,10 +193,10 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner_addr": "terra1...", 
+    "owner_addr": "daodiseo1...", 
     "max_borrow_factor": "0.95", 
-    "interest_model": "terra1...", 
-    "distribution_model": "terra1..." 
+    "interest_model": "daodiseo1...", 
+    "distribution_model": "daodiseo1..." 
   }
 }
 ```
@@ -234,7 +234,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "repay_stable_from_liquidation": {
-    "borrower": "terra1...", 
+    "borrower": "daodiseo1...", 
     "prev_balance": "1000000000" 
   }
 }
@@ -339,7 +339,7 @@ pub enum ExecuteMsg {
 {
   "borrow_stable": {
     "borrow_amount": "1000000000", 
-    "to": "terra1..." 
+    "to": "daodiseo1..." 
   }
 }
 ```
@@ -402,7 +402,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "claim_rewards": {
-    "to": "terra1..." 
+    "to": "daodiseo1..." 
   }
 }
 ```
@@ -419,7 +419,7 @@ pub enum ExecuteMsg {
 
 ### `RedeemStable`
 
-Redeems aTerra to their underlying stablecoins.
+Redeems aDaodiseo to their underlying stablecoins.
 
 {% tabs %}
 {% tab title="Rust" %}
@@ -483,7 +483,7 @@ pub enum QueryMsg {
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct ConfigResponse {
     pub owner_addr: String, 
-    pub aterra_contract: String, 
+    pub adaodiseo_contract: String, 
     pub interest_model: String, 
     pub distribution_model: String, 
     pub overseer_contract: String, 
@@ -498,13 +498,13 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner_addr": "terra1...", 
-  "aterra_contract": "terra1...", 
-  "interest_model": "terra1...", 
-  "distribution_model": "terra1...", 
-  "overseer_contract": "terra1...", 
-  "collector_contract": "terra1...", 
-  "distributor_contract": "terra1...", 
+  "owner_addr": "daodiseo1...", 
+  "adaodiseo_contract": "daodiseo1...", 
+  "interest_model": "daodiseo1...", 
+  "distribution_model": "daodiseo1...", 
+  "overseer_contract": "daodiseo1...", 
+  "collector_contract": "daodiseo1...", 
+  "distributor_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "max_borrow_factor": "1.0" 
 }
@@ -515,7 +515,7 @@ pub struct ConfigResponse {
 | Key | Type | Description |
 | :--- | :--- | :--- |
 | `owner_addr` | String | Address of contract owner |
-| `aterra_contract` | String | Contract address of aTerra |
+| `adaodiseo_contract` | String | Contract address of aDaodiseo |
 | `interest_model` | String | Contract address of Interest Model |
 | `distribution_model` | String | Contract address of Distribution Model |
 | `overseer_contract` | String | Contract address of Overseer |
@@ -572,7 +572,7 @@ pub struct State {
     pub global_interest_index: Decimal256, 
     pub global_reward_index: Decimal256, 
     pub anc_emission_rate: Decimal256, 
-    pub prev_aterra_supply: Uint256, 
+    pub prev_adaodiseo_supply: Uint256, 
     pub prev_exchange_rate: Decimal256, 
 }
 ```
@@ -588,7 +588,7 @@ pub struct State {
   "global_interest_index": "1.23456789", 
   "global_reward_index": "123456.789", 
   "anc_emission_rate": "0.05", 
-  "prev_aterra_supply": "100000000", 
+  "prev_adaodiseo_supply": "100000000", 
   "prev_exchange_rate": "1.23456789" 
 }
 ```
@@ -604,8 +604,8 @@ pub struct State {
 | `global_interest_index` | Decimal256 | Current global interest index |
 | `global_reward_index` | Decimal256 | Current ANC global reward index |
 | `anc_emission_rate` | Decimal256 | Current per-block ANC emission rate to borrowers |
-| `prev_aterra_supply` | Uint256 | aTerra supply when interest was last accrued |
-| `prev_exchange_rate` | Decimal256 | aTerra exchange rate when interest was last accrued |
+| `prev_adaodiseo_supply` | Uint256 | aDaodiseo supply when interest was last accrued |
+| `prev_exchange_rate` | Decimal256 | aDaodiseo exchange rate when interest was last accrued |
 
 ### `EpochState`
 
@@ -652,7 +652,7 @@ pub enum QueryMsg {
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq, JsonSchema)]
 pub struct EpochStateResponse {
     pub exchange_rate: Decimal256, 
-    pub aterra_supply: Uint256, 
+    pub adaodiseo_supply: Uint256, 
 }
 ```
 {% endtab %}
@@ -661,7 +661,7 @@ pub struct EpochStateResponse {
 ```javascript
 {
   "exchange_rate": "1.23", 
-  "aterra_supply": "100000000" 
+  "adaodiseo_supply": "100000000" 
 }
 ```
 {% endtab %}
@@ -669,8 +669,8 @@ pub struct EpochStateResponse {
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `exchange_rate` | Decimal256 | Current aTerra exchange rate |
-| `aterra_supply` | Uint256 | Current aTerra supply |
+| `exchange_rate` | Decimal256 | Current aDaodiseo exchange rate |
+| `adaodiseo_supply` | Uint256 | Current aDaodiseo supply |
 
 ### `BorrowerInfo`
 
@@ -694,7 +694,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "borrower_info": {
-    "borrower": "terra1...", 
+    "borrower": "daodiseo1...", 
     "block_height": 123456 
   }
 }
@@ -728,7 +728,7 @@ pub struct BorrowInfoResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "borrower": "terra1...", 
+  "borrower": "daodiseo1...", 
   "interest_index": "1.23456789", 
   "reward_index": "123.456789", 
   "loan_amount": "123456789", 
@@ -768,7 +768,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "borrower_infos": {
-    "start_after": "terra1...", 
+    "start_after": "daodiseo1...", 
     "limit": 10 
   }
 }
@@ -809,14 +809,14 @@ pub struct BorrowInfoResponse {
 {
   "borrower_infos": [
     {
-      "borrower": "terra1...", 
+      "borrower": "daodiseo1...", 
       "interest_index": "1.23456789", 
       "reward_index": "123.456789", 
       "loan_amount": "123456789", 
       "pending_rewards": "123456.789" 
     }, 
     {
-      "borrower": "terra1...", 
+      "borrower": "daodiseo1...", 
       "interest_index": "1.23456789", 
       "reward_index": "123.456789", 
       "loan_amount": "123456789", 

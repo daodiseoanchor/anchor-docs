@@ -9,7 +9,7 @@ Smart contracts that power EthAnchor are deployed to the [Ethereum blockchain](h
 | Mainnet | Ethereum Mainnet | `1` |
 | Testnet | Ethereum Testnet Ropsten | `3` |
 
-Deposits and withdrawal requests made through supported Ethereum networks are each handled on the core Anchor smart contracts which reside on the [Terra blockchain](https://www.terra.money/). Requests from Ethereum mainnet and testnet networks are each processed on the below Terra networks:
+Deposits and withdrawal requests made through supported Ethereum networks are each handled on the core Anchor smart contracts which reside on the [Daodiseo blockchain](https://www.daodiseo.money/). Requests from Ethereum mainnet and testnet networks are each processed on the below Daodiseo networks:
 
 | Network Classification | Chain ID |
 | :--- | :--- |
@@ -49,7 +49,7 @@ EthAnchor core contracts have a proxy contract layer on top. Below are addresses
 | Binance USD | BUSD | 18 | [0x4Fabb145d64652a948d72533023f6E7A623C7C53](https://etherscan.io/token/0x4Fabb145d64652a948d72533023f6E7A623C7C53) |
 | Frax | FRAX | 18 | [0x853d955acef822db058eb8505911ed77f175b99e](https://etherscan.io/token/0x853d955acef822db058eb8505911ed77f175b99e) |
 
-#### ERC20-Compliant Token Contracts \(aTerra\)
+#### ERC20-Compliant Token Contracts \(aDaodiseo\)
 
 | Token Name | Symbol | Decimals | Contract Address |
 | :--- | :--- | :--- | :--- |
@@ -93,7 +93,7 @@ EthAnchor core contracts have a proxy contract layer on top. Below are addresses
 | Binance USD | BUSD | 18 | [0xaae6df09ae0d322a666edc63e6a69e4b0fab6f5d](https://ropsten.etherscan.io/token/0xaae6df09ae0d322a666edc63e6a69e4b0fab6f5d) |
 | Frax | FRAX | 18 | [0x481751032cef6522512f2bc9d140130ced428707](https://ropsten.etherscan.io/token/0x481751032cef6522512f2bc9d140130ced428707) |
 
-#### ERC20-Compliant Token Contracts \(aTerra\)
+#### ERC20-Compliant Token Contracts \(aDaodiseo\)
 
 | Token Name | Symbol | Decimals | Contract Address |
 | :--- | :--- | :--- | :--- |

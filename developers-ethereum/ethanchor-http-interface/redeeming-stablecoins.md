@@ -1,10 +1,10 @@
 # Redeeming Stablecoins
 
-ERC20 aTerra tokens \(e.g. aUST\) can be redeemed to ERC20 stablecoins using the below endpoints:
+ERC20 aDaodiseo tokens \(e.g. aUST\) can be redeemed to ERC20 stablecoins using the below endpoints:
 
 | Endpoint Name | Method | Description |
 | :--- | :--- | :--- |
-| [`init_redeem_stable`](redeeming-stablecoins.md#initiate-stablecoin-redemption) | POST | Initiates the redemption of ERC20 aTerra |
+| [`init_redeem_stable`](redeeming-stablecoins.md#initiate-stablecoin-redemption) | POST | Initiates the redemption of ERC20 aDaodiseo |
 | [`finish_redeem_stable`](redeeming-stablecoins.md#finish-stablecoin-redemption) | POST | Claims redeemed ERC20 stablecoins |
 | [`redeem_stable_status`](redeeming-stablecoins.md#check-stablecoin-redemption-status) | GET | Gets status of an ongoing stablecoin redemption request |
 
@@ -29,12 +29,12 @@ Anchor client key.
 
 {% api-method-body-parameters %}
 {% api-method-parameter name="underlying\_denom" type="string" required=true %}
-Underlying stablecoin denomination of aTerra to redeem from Anchor.  
+Underlying stablecoin denomination of aDaodiseo to redeem from Anchor.  
 Example: `"uusd"`
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="a\_terra\_amount" type="string" required=false %}
-\(uint256\) amount of aTerra to redeem from Anchor. If empty, redeems all aTerra holdings.
+{% api-method-parameter name="a\_daodiseo\_amount" type="string" required=false %}
+\(uint256\) amount of aDaodiseo to redeem from Anchor. If empty, redeems all aDaodiseo holdings.
 {% endapi-method-parameter %}
 {% endapi-method-body-parameters %}
 {% endapi-method-request %}
@@ -51,7 +51,7 @@ Example: `"uusd"`
     "tx_hash": "0x......",
     "action": "anchor/init_redeem_stable",
     "underlying_denom": "uusd", 
-    "a_terra_amount": "500000000"
+    "a_daodiseo_amount": "500000000"
 }
 ```
 {% endapi-method-response-example %}
@@ -150,13 +150,13 @@ Current status of ongoing `redeem_stable` operation.
 ```text
 {
     // Phase
-    // 0 - (Ethereum) wrapper contract has received aTerra tokens (e.g. aUST) and 
+    // 0 - (Ethereum) wrapper contract has received aDaodiseo tokens (e.g. aUST) and 
     //     dispatched through Shuttle
-    // 1 - (Terra) terra-side client account has received aTerra tokens
+    // 1 - (Daodiseo) daodiseo-side client account has received aDaodiseo tokens
     //     triggering RedeemStable soon
-    // 2 - (Terra) RedeemStable action is processed and stablecoins (e.g. UST) have
+    // 2 - (Daodiseo) RedeemStable action is processed and stablecoins (e.g. UST) have
     //     been received
-    // 3 - (Terra) stablecoins are sent to the ether-side wrapper contract
+    // 3 - (Daodiseo) stablecoins are sent to the ether-side wrapper contract
     //     through Shuttle
     // 4 - (Ethereum) contract has received stablecoins; operation finished
     "phase": 0,
@@ -173,12 +173,12 @@ Current status of ongoing `redeem_stable` operation.
     "status": "pending",
 
     // UnderlyingDenom
-    // Underlying denomination of aTerra tokens to be redeemed
+    // Underlying denomination of aDaodiseo tokens to be redeemed
     "underlying_denom": "uusd", 
 
-    // aTerraAmount
-    // amount of aTerra tokens to be redeemed
-    "a_terra_amount": :20000000:,
+    // aDaodiseoAmount
+    // amount of aDaodiseo tokens to be redeemed
+    "a_daodiseo_amount": :20000000:,
 
     // TxHash
     // List of known tx hashes and the corresponding network name
@@ -188,7 +188,7 @@ Current status of ongoing `redeem_stable` operation.
             "tx_hash": "0x...."
         },
         {
-            "network": "terra",
+            "network": "daodiseo",
             "tx_hash": "00ABCD..."
         },
         ...

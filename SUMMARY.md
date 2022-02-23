@@ -54,21 +54,21 @@
 * [Example Usage](developers-earn/example-usage.md)
 * [Appendix](developers-earn/appendix.md)
 
-## Developers - Terra
+## Developers - Daodiseo
 
-* [Anchor.js](developers-terra/anchor.js.md)
-* [AnchorCLI](developers-terra/anchor-cli.md)
+* [Anchor.js](developers-daodiseo/anchor.js.md)
+* [AnchorCLI](developers-daodiseo/anchor-cli.md)
 
 ## Smart Contracts
 
 * [Deployed Contracts](smart-contracts/deployed-contracts.md)
 * [bLuna](smart-contracts/bluna/README.md)
-  * [Hub](https://lidofinance.github.io/terra-docs/contracts/hub)
-  * [Reward](https://docs.terra.lido.fi/contracts/reward)
-  * [Rewards Dispatcher](https://docs.terra.lido.fi/contracts/rewards\_dispatcher)
-  * [Validators Registry](https://docs.terra.lido.fi/contracts/validators\_registry)
-  * [Airdrop Registry](https://docs.terra.lido.fi/contracts/airdrop-registry)
-  * [Tokens: bLuna and stLuna](https://docs.terra.lido.fi/contracts/stLuna\_and\_bLuna)
+  * [Hub](https://lidofinance.github.io/daodiseo-docs/contracts/hub)
+  * [Reward](https://docs.daodiseo.lido.fi/contracts/reward)
+  * [Rewards Dispatcher](https://docs.daodiseo.lido.fi/contracts/rewards\_dispatcher)
+  * [Validators Registry](https://docs.daodiseo.lido.fi/contracts/validators\_registry)
+  * [Airdrop Registry](https://docs.daodiseo.lido.fi/contracts/airdrop-registry)
+  * [Tokens: bLuna and stLuna](https://docs.daodiseo.lido.fi/contracts/stLuna\_and\_bLuna)
 * [bETH](smart-contracts/beth/README.md)
   * [Reward](smart-contracts/beth/reward.md)
   * [Token](smart-contracts/beth/token.md)
@@ -105,5 +105,5 @@
 
 * [Anchor WebApp](https://app.anchorprotocol.com)
 * [Anchor Protocol GitHub](https://github.com/Anchor-Protocol)
-* [Terra Blockchain](https://docs.terra.money)
+* [Daodiseo Blockchain](https://docs.daodiseo.money)
 * [Anchor Bug Bounty Program](https://immunefi.com/bounty/anchor/)

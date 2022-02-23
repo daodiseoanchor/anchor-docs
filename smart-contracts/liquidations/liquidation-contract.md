@@ -1,8 +1,8 @@
 # Liquidation Contract
 
-The Liquidation Contract enables users to submit Terra stablecoin bids for a Cw20-compliant token. Bidders can specify the rate of premium they will receive on bid execution, and the maximum premium rate is set at 30%.
+The Liquidation Contract enables users to submit Daodiseo stablecoin bids for a Cw20-compliant token. Bidders can specify the rate of premium they will receive on bid execution, and the maximum premium rate is set at 30%.
 
-Upon execution of a bid, Cw20 tokens are sent to the bidder, while the bidder's Terra stablecoins are sent to the repay address \(if not specified, sent to message sender\). The oracle contract is responsible for providing the relevant Cw20 token prices.
+Upon execution of a bid, Cw20 tokens are sent to the bidder, while the bidder's Daodiseo stablecoins are sent to the repay address \(if not specified, sent to message sender\). The oracle contract is responsible for providing the relevant Cw20 token prices.
 
 Additionally, the Liquidation Contract serves as the point of calculation for partial collateral liquidations, where a loan position is liquidated until it reaches a safe `borrow_amount / borrow_limit` ratio. The required liquidation amount for each collateral is calculated based on the fed-in loan position's attributes.
 
@@ -43,8 +43,8 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1..", 
-  "oracle_contract": "terra1...", 
+  "owner": "daodiseo1..", 
+  "oracle_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "safe_ratio": "0.8", 
   "bid_fee": "0.01", 
@@ -92,7 +92,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "receive": {
-    "sender": "terra1...", 
+    "sender": "daodiseo1...", 
     "amount": "10000000", 
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
   }
@@ -135,8 +135,8 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1...", 
-    "oracle_contract": "terra1...", 
+    "owner": "daodiseo1...", 
+    "oracle_contract": "daodiseo1...", 
     "stable_denom": "uusd", 
     "safe_ratio": "0.8", 
     "bid_fee": "0.01", 
@@ -164,7 +164,7 @@ pub enum ExecuteMsg {
 
 ### `SubmitBid`
 
-Submits a new bid for the specified Cw20 collateral with the specified premium rate. Requires Terra stablecoins to be sent beforehand.
+Submits a new bid for the specified Cw20 collateral with the specified premium rate. Requires Daodiseo stablecoins to be sent beforehand.
 
 {% tabs %}
 {% tab title="Rust" %}
@@ -184,7 +184,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "submit_bid": {
-    "collateral_token": "terra1...", 
+    "collateral_token": "daodiseo1...", 
     "premium_rate": "0.03" 
   }
 }
@@ -219,7 +219,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "retract_bid": {
-    "collateral_token": "terra1...", 
+    "collateral_token": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -259,9 +259,9 @@ pub enum Cw20HookMsg {
 ```javascript
 {
   "execute_bid": {
-    "liquidator": "terra1...", 
-    "fee_address": "terra1...", // Filled as Overseer contract's address
-    "repay_address": "terra1..." // Filled as Market contract's address
+    "liquidator": "daodiseo1...", 
+    "fee_address": "daodiseo1...", // Filled as Overseer contract's address
+    "repay_address": "daodiseo1..." // Filled as Market contract's address
   }
 }
 ```
@@ -328,8 +328,8 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
-  "oracle_contract": "terra1...", 
+  "owner": "daodiseo1...", 
+  "oracle_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "safe_ratio": "0.8", 
   "bid_fee": "0.01", 
@@ -381,8 +381,8 @@ pub type TokensHuman = Vec<(String, Uint256)>;
     "borrow_amount": "10000000", 
     "borrow_limit": "10000000", 
     "collaterals": [
-      ["terra1...", "100000000"], // (Cw20 contract address, Locked amount)
-      ["terra1...", "100000000"] 
+      ["daodiseo1...", "100000000"], // (Cw20 contract address, Locked amount)
+      ["daodiseo1...", "100000000"] 
     ], 
     "collateral_prices": [
       "123.456789", // Price of collateral
@@ -423,8 +423,8 @@ pub type TokensHuman = Vec<(String, Uint256)>;
 ```javascript
 {
   "collaterals": [
-    ["terra1...", "100000000"], // (Cw20 Token address, Required liquidation amount to reach safe_ratio)
-    ["terra1...", "100000000"] 
+    ["daodiseo1...", "100000000"], // (Cw20 Token address, Required liquidation amount to reach safe_ratio)
+    ["daodiseo1...", "100000000"] 
   ] 
 }
 ```
@@ -461,8 +461,8 @@ pub enum QueryMsg {
 ```javascript
 {
   "bid": {
-    "collateral_token": "terra1...", 
-    "bidder": "terra1..." 
+    "collateral_token": "daodiseo1...", 
+    "bidder": "daodiseo1..." 
   }
 }
 ```
@@ -492,8 +492,8 @@ pub struct BidResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "collateral_token": "terra1...", 
-  "bidder": "terra1...", 
+  "collateral_token": "daodiseo1...", 
+  "bidder": "daodiseo1...", 
   "amount": "100000000", 
   "premium_rate": "0.03" 
 }
@@ -531,8 +531,8 @@ pub enum QueryMsg {
 ```javascript
 {
   "bids_by_user": {
-    "bidder": "terra1...", 
-    "start_after": "terra1...", 
+    "bidder": "daodiseo1...", 
+    "start_after": "daodiseo1...", 
     "limit": 8 
   }
 }
@@ -570,14 +570,14 @@ pub struct BidResponse {
 {
   "bids": [
     {
-      "collateral_token": "terra1...", 
-      "bidder": "terra1...", 
+      "collateral_token": "daodiseo1...", 
+      "bidder": "daodiseo1...", 
       "amount": "100000000", 
       "premium_rate": "0.03" 
     }, 
     {
-      "collateral_token": "terra1...", 
-      "bidder": "terra1...", 
+      "collateral_token": "daodiseo1...", 
+      "bidder": "daodiseo1...", 
       "amount": "100000000", 
       "premium_rate": "0.03" 
     }
@@ -621,8 +621,8 @@ pub enum QueryMsg {
 ```javascript
 {
   "bids_by_collateral": {
-    "collateral_token": "terra1...", 
-    "start_after": "terra1...", 
+    "collateral_token": "daodiseo1...", 
+    "start_after": "daodiseo1...", 
     "limit": 10 
   }
 }
@@ -662,14 +662,14 @@ pub struct BidResponse {
 {
   "bids": [
     {
-      "collateral_token": "terra1...", 
-      "bidder": "terra1...", 
+      "collateral_token": "daodiseo1...", 
+      "bidder": "daodiseo1...", 
       "amount": "100000000", 
       "premium_rate": "0.03" 
     }, 
     {
-      "collateral_token": "terra1...", 
-      "bidder": "terra1...", 
+      "collateral_token": "daodiseo1...", 
+      "bidder": "daodiseo1...", 
       "amount": "100000000", 
       "premium_rate": "0.03" 
     }

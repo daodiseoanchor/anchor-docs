@@ -1,13 +1,13 @@
 # Staking
 
-The Staking Contract contains the logic for LP Token staking and reward distribution. ANC tokens allocated for as liquidity incentives are distributed pro-rata to stakers of the ANC-UST Terraswap pair LP token. 
+The Staking Contract contains the logic for LP Token staking and reward distribution. ANC tokens allocated for as liquidity incentives are distributed pro-rata to stakers of the ANC-UST Daodiseoswap pair LP token. 
 
 ## Config
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | `anchor_token` | CanonicalAddr | Contract address of Anchor Token \(ANC\) |
-| `staking_token` | CanonicalAddr | Contract address of ANC-UST Terraswap pair LP token |
+| `staking_token` | CanonicalAddr | Contract address of ANC-UST Daodiseoswap pair LP token |
 | `distribution_schedule` | Vec&lt;\(u64, u64, Uint128\)&gt; | ANC distribution schedule for LP token stakers \(start block **\[block\]**, end block **\[block\]**, distribution amount\) |
 
 ## InstantiateMsg
@@ -27,8 +27,8 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "anchor_token": "terra1...", 
-  "staking_token": "terra1...", 
+  "anchor_token": "daodiseo1...", 
+  "staking_token": "daodiseo1...", 
   "distribution_schedule": [
     [123456, 234567, "100000000"], 
     [234567, 345678, "200000000"]
@@ -41,7 +41,7 @@ pub struct InstantiateMsg {
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | `anchor_token` | String | Contract address of Anchor Token \(ANC\) |
-| `staking_token` | String | Contract address of ANC-UST Terraswap pair LP token |
+| `staking_token` | String | Contract address of ANC-UST Daodiseoswap pair LP token |
 | `distribution_schedule` | Vec&lt;\(u64, u64, Uint128\)&gt; | ANC distribution schedule for LP token stakers \(start block **\[block\]**, end block **\[block\]**, distribution amount\) |
 
 ## ExecuteMsg
@@ -70,7 +70,7 @@ pub enum ExecuteMsg {
 {
   "receive": {
     "amount": "10000000",
-    "sender": "terra1...",
+    "sender": "daodiseo1...",
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9"
   }
 }
@@ -86,7 +86,7 @@ pub enum ExecuteMsg {
 
 ### `Unbond`
 
-Unbonds specified amount of ANC-UST Terraswap LP tokens and transfers them to the message sender.
+Unbonds specified amount of ANC-UST Daodiseoswap LP tokens and transfers them to the message sender.
 
 {% tabs %}
 {% tab title="Rust" %}
@@ -165,7 +165,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "migrate_staking": {
-    "new_staking_contract": "terra1...", 
+    "new_staking_contract": "daodiseo1...", 
   }
 }
 ```
@@ -186,7 +186,7 @@ pub enum ExecuteMsg {
 Sending LP tokens to the Staking contract without issuing this hook will lead to **PERMANENT LOSS OF FUNDS**.
 {% endhint %}
 
-Bonds LP tokens of the ANC-UST Terraswap pair.
+Bonds LP tokens of the ANC-UST Daodiseoswap pair.
 
 {% tabs %}
 {% tab title="Rust" %}
@@ -259,8 +259,8 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "anchor_token": "terra1...", 
-  "staking_token": "terra1...", 
+  "anchor_token": "daodiseo1...", 
+  "staking_token": "daodiseo1...", 
   "distribution_schedule": [
     [123456, 234567, "100000000"], 
     [234567, 345678, "200000000"]
@@ -273,7 +273,7 @@ pub struct ConfigResponse {
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | `anchor_token` | String | Contract address of Anchor Token \(ANC\) |
-| `staking_token` | String | Contract address of ANC-UST Terraswap pair LP token |
+| `staking_token` | String | Contract address of ANC-UST Daodiseoswap pair LP token |
 | `distribution_schedule` | Vec&lt;\(u64, u64, Uint128\)&gt; | ANC distribution schedule for LP token stakers \(start block **\[block\]**, end block **\[block\]**, amount\) |
 
 ### `State`
@@ -363,7 +363,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "staker_info": {
-    "staker": "terra1...", 
+    "staker": "daodiseo1...", 
     "block_height": 123456 
   }
 }
@@ -396,7 +396,7 @@ pub struct StakerInfoResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "staker": "terra1...", 
+  "staker": "daodiseo1...", 
   "reward_index": "123.456", 
   "bond_amount": "100000000", 
   "pending_rewards": "100000000" 

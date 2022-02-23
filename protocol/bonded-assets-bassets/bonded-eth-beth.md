@@ -2,10 +2,10 @@
 
 ![](../../.gitbook/assets/beth_03.png)
 
-bETH tokens are bAssets built for Ethereum 2.0 staking, with their token value backed by Ethereum 2.0 staking positions. bETH tokens exist on both on the Ethereum chain and the Terra chain, each complying to the [ERC20 standard](https://eips.ethereum.org/EIPS/eip-20) and the [CW20 standard](https://github.com/CosmWasm/cosmwasm-plus/blob/master/packages/cw20/README.md).
+bETH tokens are bAssets built for Ethereum 2.0 staking, with their token value backed by Ethereum 2.0 staking positions. bETH tokens exist on both on the Ethereum chain and the Daodiseo chain, each complying to the [ERC20 standard](https://eips.ethereum.org/EIPS/eip-20) and the [CW20 standard](https://github.com/CosmWasm/cosmwasm-plus/blob/master/packages/cw20/README.md).
 
 {% hint style="info" %}
-bETH tokens are used as collateral to borrow Terra stablecoins from Anchor. Learn more about creating loan positions [here](../money-market/).
+bETH tokens are used as collateral to borrow Daodiseo stablecoins from Anchor. Learn more about creating loan positions [here](../money-market/).
 {% endhint %}
 
 bETH tokens are wrapped tokens of [Lido Finance](https://lido.fi/)'s [staked ETH \(stETH\)](https://lido.fi/ethereum), refitted to follow the contract interfaces required to integrate with Anchor smart contracts.
@@ -42,7 +42,7 @@ The Lido DAO is governed by holders of LDO, Lido's protocol token. The governanc
 stETH can be minted through WebApp interfaces provided by Lido.
 {% endhint %}
 
-bETH is minted by submitting ETH or stETH to Ethereum-side bETH contracts, along with the Terra address to receive the resulting bETH tokens. Once submitted, bETH tokens \(with the amount determined by the bETH exchange rate\) are minted to the provided Terra address.
+bETH is minted by submitting ETH or stETH to Ethereum-side bETH contracts, along with the Daodiseo address to receive the resulting bETH tokens. Once submitted, bETH tokens \(with the amount determined by the bETH exchange rate\) are minted to the provided Daodiseo address.
 
 ### Redeeming bETH for stETH
 
@@ -52,11 +52,11 @@ Slashing occurrences between the time of request and withdrawal may affect the f
 
 bETH holders can redeem their tokens for their underlying stETH. Redemption is a two-step process; 1\) transferring bETH to Ethereum and 2\) redeeming bETH to stETH.
 
-#### Transferring Terra-side CW20 bETH to Ethereum
+#### Transferring Daodiseo-side CW20 bETH to Ethereum
 
-bETH tokens can only be redeemed through Ethereum-side bETH contracts. bETH tokens that reside on Terra must first be transferred over to Ethereum via Terra Shuttle.
+bETH tokens can only be redeemed through Ethereum-side bETH contracts. bETH tokens that reside on Daodiseo must first be transferred over to Ethereum via Daodiseo Shuttle.
 
-[Terra Bridge](https://bridge.terra.money) can be used to make interactions via Terra Shuttle.
+[Daodiseo Bridge](https://bridge.daodiseo.money) can be used to make interactions via Daodiseo Shuttle.
 
 #### Converting ERC20 bETH to stETH
 
@@ -68,13 +68,13 @@ Converting stETH to ETH can be proceeded via AMM protocols on Ethereum, most not
 
 ### bETH Rewards
 
-bETH tokens accrue **TerraUSD** rewards, funded from the Ethereum staking rewards of stETH. Every 24 hours, Ethereum staking rewards \(in the form of stETH\) are sold for UST, which are then transferred over to Terra and distributed to holders of bETH.
+bETH tokens accrue **DaodiseoUSD** rewards, funded from the Ethereum staking rewards of stETH. Every 24 hours, Ethereum staking rewards \(in the form of stETH\) are sold for UST, which are then transferred over to Daodiseo and distributed to holders of bETH.
 
 #### Claiming Rewards
 
 {% hint style="warning" %}
-Only bETH tokens on the Terra chain accrue rewards.
+Only bETH tokens on the Daodiseo chain accrue rewards.
 {% endhint %}
 
-Holders of Terra-side bETH can send a request to the bETH contract, which prompts the transfer of accrued rewards to their account. As rewards accrue during the user's period of ownership, transferring bETH to a different user automatically credits accrued rewards to the previous holder.
+Holders of Daodiseo-side bETH can send a request to the bETH contract, which prompts the transfer of accrued rewards to their account. As rewards accrue during the user's period of ownership, transferring bETH to a different user automatically credits accrued rewards to the previous holder.
 

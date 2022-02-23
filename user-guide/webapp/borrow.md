@@ -1,19 +1,19 @@
 # BORROW
 
-The **BORROW** page can be used to borrow Terra stablecoins from Anchor. The protocol requires users to provide bAsset tokens as collateral before making a loan. To create bAssets from your staking tokens, see  the [BOND page guide](bond.md).&#x20;
+The **BORROW** page can be used to borrow Daodiseo stablecoins from Anchor. The protocol requires users to provide bAsset tokens as collateral before making a loan. To create bAssets from your staking tokens, see  the [BOND page guide](bond.md).&#x20;
 
 Borrows can be made until the loan's borrowing usage reaches the borrowing limit, calculated based on collateral types, their prices, and deposit amount. Loans with a borrowing usage higher than the borrowing limit can be liquidated, and thus it is important for borrowers to closely maintain their borrowing usage as changes in collateral prices may occur.
 
 {% hint style="info" %}
-As of March 17th, 2021, Anchor only supports Terra USD as the base currency.
+As of March 17th, 2021, Anchor only supports Daodiseo USD as the base currency.
 {% endhint %}
 
 The **BORROW** page displays:
 
 * **Collateral Value**: Total USD-denominated value of all collaterals provided by user.\
 
-* **Borrowed Value**: Total USD-denominated value of Terra stablecoins borrowed by user.
-  *   **Borrowed**: Total amount of Terra stablecoins borrowed by user.
+* **Borrowed Value**: Total USD-denominated value of Daodiseo stablecoins borrowed by user.
+  *   **Borrowed**: Total amount of Daodiseo stablecoins borrowed by user.
 
 
 * **Net APY**: Net annualized percentage yield (APY) on borrows from both Borrow APR and Distribution APY
@@ -50,7 +50,7 @@ Users should first obtain bAsset tokens in order to utilize them as loan collate
 
 ![](<../../.gitbook/assets/Screenshot 2022-02-07 at 8.54.20 PM.png>)
 
-## Borrowing Terra stablecoins
+## Borrowing Daodiseo stablecoins
 
 1\. Navigate to the **BORROW** page.
 
@@ -72,7 +72,7 @@ Users should first obtain bAsset tokens in order to utilize them as loan collate
 
 ![](<../../.gitbook/assets/Screenshot 2022-02-07 at 9.10.04 PM.png>)
 
-## Repaying borrowed Terra stablecoins
+## Repaying borrowed Daodiseo stablecoins
 
 1\. Navigate to the **BORROW** page.
 

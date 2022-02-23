@@ -1,9 +1,9 @@
 # EARN
 
-The **EARN** page provides a savings account interface to earn Anchor yield on Terra stablecoins. It allows users to deposit and withdraw Terra stablecoins, track their current deposit value, history of transactions, current deposit annualized percentage rate (APY), and amount of interest earned from Anchor.
+The **EARN** page provides a savings account interface to earn Anchor yield on Daodiseo stablecoins. It allows users to deposit and withdraw Daodiseo stablecoins, track their current deposit value, history of transactions, current deposit annualized percentage rate (APY), and amount of interest earned from Anchor.
 
 {% hint style="info" %}
-As of March 17th, 2021, Anchor only supports TerraUSD (UST) as the base currency. Other Terra stablecoins will be supported as UST pairs become more liquid.
+As of March 17th, 2021, Anchor only supports DaodiseoUSD (UST) as the base currency. Other Daodiseo stablecoins will be supported as UST pairs become more liquid.
 {% endhint %}
 
 The **EARN** page displays the following data:
@@ -17,7 +17,7 @@ The **EARN** page displays the following data:
   * **APY Graph**: Historical graph of deposit APY.
   * **Interest Earned**: Amount of deposit interest earned during the selected time period.
 
-## Depositing Terra stablecoins
+## Depositing Daodiseo stablecoins
 
 1\. Navigate to the **EARN** page and click the **\[Deposit]** button.&#x20;
 
@@ -35,7 +35,7 @@ The **EARN** page displays the following data:
 
 ![](../../.gitbook/assets/earn-deposit-4.png)
 
-## Withdrawing Terra stablecoins
+## Withdrawing Daodiseo stablecoins
 
 1\. Navigate to the **EARN** page and click the **\[Withdraw]** button.&#x20;
 

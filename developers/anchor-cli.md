@@ -4,7 +4,7 @@
 This section provides a brief guide on how to interact with Anchor Protocol via `anchorcli`. For further information, please check its source code and documentation on [GitHub](https://github.com/Anchor-Protocol/anchorcli).
 {% endhint %}
 
-`anchorcli` is a command-line interface for Anchor Protocol on Terra and allows more advanced users to perform operations directly from their shell or terminal without having to interact with a graphical interface. `mirrorcli` is built on top of `terracli` and allows you to use keys saved in its keychain.
+`anchorcli` is a command-line interface for Anchor Protocol on Daodiseo and allows more advanced users to perform operations directly from their shell or terminal without having to interact with a graphical interface. `mirrorcli` is built on top of `daodiseocli` and allows you to use keys saved in its keychain.
 
 ## Installation
 
@@ -12,7 +12,7 @@ This section provides a brief guide on how to interact with Anchor Protocol via 
 
 * Node.js 12+
 * NPM
-* `terracli` in your path
+* `daodiseocli` in your path
 
 `anchorcli` can be installed through NPM:
 
@@ -27,7 +27,7 @@ $ anchorcli
         
   Usage: anchorcli [options] [command]
 
-  Command-line interface for interacting with Anchor Protocol on Terra
+  Command-line interface for interacting with Anchor Protocol on Daodiseo
 
   Options:
     -V, --version   output the version number
@@ -46,13 +46,13 @@ By default, `anchorcli` works with the default configuration which is set to be 
 
 ### Specifying LCD settings
 
-Each network config should define how to connect to the Terra blockchain via LCD parameters.
+Each network config should define how to connect to the Daodiseo blockchain via LCD parameters.
 
 ```javascript
 {
   "lcd": {
     "chainID": "tequila-0004",
-    "URL": "https://tequila-lcd.terra.dev",
+    "URL": "https://tequila-lcd.daodiseo.dev",
     "gasPrices": {
       "uluna": 0.15,
       "usdr": 0.1018,
@@ -72,20 +72,20 @@ Each address configuration should point to the correct Anchor core contract addr
 ```javascript
 {
  "contracts": {
-    "bLunaHub": "terra1kzx23xs8v9yggf6lqpwgerg455e8xzsv0s0glf",
-    "bAssetToken": "terra12kz7ehjh9m2aexmyumlt29qjuc9j5mjcdp0d5k",
-    "bAssetReward": "terra1pjpzktukkd20amfwc0d8mahjg5na2pgu3swdu4",
-    "mmInterest": "terra16f3lv77yu4ga4w8m7jl0xg2xkavqe347dz30v9",
-    "mmOracle": "terra1enud48d754pau5rce79xsdx9gfschw2eelwcuj",
-    "mmMarket": "terra1r8vmgf3mf5m5gcp09fnj2ewsyaqppr6ke50mf2",
-    "mmOverseer": "terra1t6zjqmqjvsfrszr65cppug4gd4xkqm33vugwl2",
-    "mmCustody": "terra1usycpap7j0mz4ynrgmtv7jc7uwqka345ushknz",
-    "mmLiquidation": "terra14pdcpx6szzfvhz4g6dfddkx82f5ssf8llmzpw4",
-    "anchorToken": "terra10c0q6qyk2634tfx2nw9v4gxqlm7a0luk9huhy8",
-    "terraswapFactory": "terra1mtvsarza55hehpmyjgw7edqwvxpq5qquvttz9n",
-    "terraswapPair": "terra1w6qcjvcwe8ljafp2859kmmcfern35ap9sngm3q",
+    "bLunaHub": "daodiseo1kzx23xs8v9yggf6lqpwgerg455e8xzsv0s0glf",
+    "bAssetToken": "daodiseo12kz7ehjh9m2aexmyumlt29qjuc9j5mjcdp0d5k",
+    "bAssetReward": "daodiseo1pjpzktukkd20amfwc0d8mahjg5na2pgu3swdu4",
+    "mmInterest": "daodiseo16f3lv77yu4ga4w8m7jl0xg2xkavqe347dz30v9",
+    "mmOracle": "daodiseo1enud48d754pau5rce79xsdx9gfschw2eelwcuj",
+    "mmMarket": "daodiseo1r8vmgf3mf5m5gcp09fnj2ewsyaqppr6ke50mf2",
+    "mmOverseer": "daodiseo1t6zjqmqjvsfrszr65cppug4gd4xkqm33vugwl2",
+    "mmCustody": "daodiseo1usycpap7j0mz4ynrgmtv7jc7uwqka345ushknz",
+    "mmLiquidation": "daodiseo14pdcpx6szzfvhz4g6dfddkx82f5ssf8llmzpw4",
+    "anchorToken": "daodiseo10c0q6qyk2634tfx2nw9v4gxqlm7a0luk9huhy8",
+    "daodiseoswapFactory": "daodiseo1mtvsarza55hehpmyjgw7edqwvxpq5qquvttz9n",
+    "daodiseoswapPair": "daodiseo1w6qcjvcwe8ljafp2859kmmcfern35ap9sngm3q",
     "blunaBurn": {
-      "uluna": "terra12y3emkv22ug94wnq5zpmhws6fgtr929rtaq6je"
+      "uluna": "daodiseo12y3emkv22ug94wnq5zpmhws6fgtr929rtaq6je"
     }
   }
 }
@@ -108,13 +108,13 @@ Execute a function on a smart contract
 Options:
   --yaml                         Encode result as YAML instead of JSON
   -y,--yes                       Sign transaction without confirming (yes)
-  --home <string>                Directory for config of terracli
-  --from <key-name>              *Name of key in terracli keyring
+  --home <string>                Directory for config of daodiseocli
+  --from <key-name>              *Name of key in daodiseocli keyring
   --generate-only                Build an unsigned transaction and write it to stdout
   -G,--generate-msg              Build an ExecuteMsg (good for including in poll)
   --base64                       For --generate-msg: returns msg as base64
   -b,--broadcast-mode <string>   Transaction broadcasting mode (sync|async|block) (default: sync) (default: "sync")
-  --chain-id <string>            Chain ID of Terra node
+  --chain-id <string>            Chain ID of Daodiseo node
   -a,--account-number <int>      The account number of the signing account (offline mode)
   -s,--sequence <int>            The sequence number of the signing account (offline mode)
   --memo <string>                Memo to send along with transaction
@@ -164,11 +164,11 @@ Commands:
 
 ## Examples
 
-This section illustrates the usage of `anchorcli` through some use cases. All examples assume you have a key in `terracli` keychain called `test1`.
+This section illustrates the usage of `anchorcli` through some use cases. All examples assume you have a key in `daodiseocli` keychain called `test1`.
 
 #### Bond Luna to mint bLuna
 
-Anchor protocol requires you to provide bAsset collaterals to borrow Terra stablecoins. bLuna tokens which are whitelisted as an eligible collateral can be used.
+Anchor protocol requires you to provide bAsset collaterals to borrow Daodiseo stablecoins. bLuna tokens which are whitelisted as an eligible collateral can be used.
 
 In order to obtain bLuna tokens, a user needs to bond Luna first, which then the contract will issue bLuna for the user. The following example is the way a user can bond Luna to gain bLuna:
 

@@ -147,11 +147,11 @@ Current status of ongoing deposit stable operation.
     // Phase
     // 0 - (Ethereum) wrapper contract has received stablecoins (e.g. UST) and 
     //     dispatched stablecoins through Shuttle
-    // 1 - (Terra) terra-side client account has received stablecoins
+    // 1 - (Daodiseo) daodiseo-side client account has received stablecoins
     //     triggering DepositStable soon
-    // 2 - (Terra) DepositStable action is processed and aTokens (e.g. aUST) have
+    // 2 - (Daodiseo) DepositStable action is processed and aTokens (e.g. aUST) have
     //     been received
-    // 3 - (Terra) aTokens are sent to the ether-side wrapper contract
+    // 3 - (Daodiseo) aTokens are sent to the ether-side wrapper contract
     //     through Shuttle
     // 4 - (Ethereum) contract has received aTokens; operation finished
     "phase": 0,
@@ -183,7 +183,7 @@ Current status of ongoing deposit stable operation.
             "tx_hash": "0x...."
         },
         {
-            "network": "terra",
+            "network": "daodiseo",
             "tx_hash": "00ABCD..."
         },
         ...

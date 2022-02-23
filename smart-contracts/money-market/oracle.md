@@ -25,7 +25,7 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "base_asset": "uusd" 
 }
 ```
@@ -60,7 +60,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1..." 
+    "owner": "daodiseo1..." 
   }
 }
 ```
@@ -95,8 +95,8 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "register_feeder": {
-    "asset": "terra1...", // Stringified Cw20 contract address
-    "feeder": "terra1..." 
+    "asset": "daodiseo1...", // Stringified Cw20 contract address
+    "feeder": "daodiseo1..." 
   }
 }
 ```
@@ -130,8 +130,8 @@ pub enum ExecuteMsg {
 {
   "feed_price": {
     "prices": [
-      ["terra1...", "123.456789"], // (Stringified Cw20 contract address, price)
-      ["terra1...", "123.456789"] 
+      ["daodiseo1...", "123.456789"], // (Stringified Cw20 contract address, price)
+      ["daodiseo1...", "123.456789"] 
     ]
   }
 }
@@ -189,7 +189,7 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "base_asset": "uusd" 
 }
 ```
@@ -222,7 +222,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "feeder": {
-    "asset": "terra1..." // Stringified Cw20 Token contract address
+    "asset": "daodiseo1..." // Stringified Cw20 Token contract address
   }
 }
 ```
@@ -249,8 +249,8 @@ pub struct FeederResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "asset": "terra1...", // Stringified Cw20 Token contract address
-  "feeder": "terra1..." 
+  "asset": "daodiseo1...", // Stringified Cw20 Token contract address
+  "feeder": "daodiseo1..." 
 }
 ```
 {% endtab %}
@@ -283,7 +283,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "price": {
-    "base": "terra1...", // Asset token contract HumanAddr in String form
+    "base": "daodiseo1...", // Asset token contract HumanAddr in String form
     "quote": "uusd" 
   }
 }
@@ -351,7 +351,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "prices": {
-    "start_after": "terra1...", // Asset token contract HumanAddr in String form
+    "start_after": "daodiseo1...", // Asset token contract HumanAddr in String form
     "limit": 10
   }
 }
@@ -388,12 +388,12 @@ pub struct PricesResponseElem {
 {
   "prices": [
     {
-      "asset": "terra1...", // Stringified Cw20 token contract HumanAddr
+      "asset": "daodiseo1...", // Stringified Cw20 token contract HumanAddr
       "price": "123.45678", 
       "last_updated_time": 10000 
     }
     {
-      "asset": "terra1...", // Stringified Cw20 token contract HumanAddr
+      "asset": "daodiseo1...", // Stringified Cw20 token contract HumanAddr
       "price": "123.45678", 
       "last_updated_time": 10000 
     }

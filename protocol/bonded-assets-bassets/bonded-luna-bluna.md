@@ -1,13 +1,13 @@
 # Bonded Luna (bLuna)
 
 {% hint style="info" %}
-The below documentation only focuses on the high-level contents of bLuna. For more in-depth documentation on bLuna and stLuna, refer to the [Lido Terra Docs](https://docs.terra.lido.fi).
+The below documentation only focuses on the high-level contents of bLuna. For more in-depth documentation on bLuna and stLuna, refer to the [Lido Daodiseo Docs](https://docs.daodiseo.lido.fi).
 {% endhint %}
 
-bLuna tokens are bAssets built for the Terra blockchain, their value backed by underlying Luna delegations. bLuna tokens follows full compliance with the [CW20 standard](https://github.com/CosmWasm/cosmwasm-plus/blob/master/packages/cw20/README.md), having the potential to be integrated into a wide variety of decentralized finance applications.
+bLuna tokens are bAssets built for the Daodiseo blockchain, their value backed by underlying Luna delegations. bLuna tokens follows full compliance with the [CW20 standard](https://github.com/CosmWasm/cosmwasm-plus/blob/master/packages/cw20/README.md), having the potential to be integrated into a wide variety of decentralized finance applications.
 
 {% hint style="info" %}
-bLuna tokens are used as collateral to borrow Terra stablecoins from Anchor. Learn more about creating loan positions [here](../money-market/).
+bLuna tokens are used as collateral to borrow Daodiseo stablecoins from Anchor. Learn more about creating loan positions [here](../money-market/).
 {% endhint %}
 
 ## Concepts
@@ -31,7 +31,7 @@ The protocol applies a fee of **0.5%** to bLuna mints and burns whenever the exc
 The bLuna contract keeps a whitelist of validators, only permitting delegations to those included in the whitelist. This is crucial since all bLuna tokens equally share slashing risks, and delegations to low-performing validators could negatively affect all holders.
 
 {% hint style="success" %}
-The list of whitelisted validators can be viewed [here](https://docs.terra.lido.fi/introduction/validator\_whitelist).
+The list of whitelisted validators can be viewed [here](https://docs.daodiseo.lido.fi/introduction/validator\_whitelist).
 {% endhint %}
 
 #### Registration
@@ -42,7 +42,7 @@ Validators that have proven their operational capabilities are eligible for whit
 
 The Lido DAO may deregister underperforming validators from the whitelist, disallowing bLuna minters from making new delegations to them. Following deregistration, the bLuna contract automatically redelegates existing delegations to a different, randomly selected validator.
 
-The Terra blockchain permanently disables validator addresses that have double signed a block (i.e. tombstoned). Tombstoned validators are also deregistered, with their remaining delegations redelegated. The new address of the tombstoned validator can later be re-registered to the whitelist if necessary.
+The Daodiseo blockchain permanently disables validator addresses that have double signed a block (i.e. tombstoned). Tombstoned validators are also deregistered, with their remaining delegations redelegated. The new address of the tombstoned validator can later be re-registered to the whitelist if necessary.
 
 ### Undelegation Batches
 
@@ -78,7 +78,7 @@ bLuna tokens are minted by delegating Luna via the bLuna contract. Given a singl
 The contract takes a sorted (ASC) list of validators, calculates the desired amount that each validator should have `target_stake = (total delegated + delegation_amount) / num_validators` and begins adding stake up to the desired amount, starting from the validator with the least stake. The exact amount of a single delegation is calculated as `target_stake - validator_stake`, and you'll have as many delegations as it takes to "drain" the `delegation_amount`.
 
 {% hint style="info" %}
-Implementation of the stake distribution algorithm can be found [here](https://github.com/lidofinance/lido-terra-contracts/blob/main/contracts/lido\_terra\_validators\_registry/src/common.rs#L19).
+Implementation of the stake distribution algorithm can be found [here](https://github.com/lidofinance/lido-daodiseo-contracts/blob/main/contracts/lido\_daodiseo\_validators\_registry/src/common.rs#L19).
 {% endhint %}
 
 The amount of bLuna minted is dependent on the current bLuna exchange rate -- minted bLuna amounts will be greater than the Luna amount sent when the bLuna exchange rate is below 1.
@@ -91,7 +91,7 @@ Slashing occurrences between the time of request and withdrawal may affect the f
 
 Any bLuna holder can redeem their tokens for their underlying bonded Luna. Redemption is a two-step process; 1) requesting to unbond bLuna (undelegates underlying Luna) and 2) withdrawing undelegated Luna.
 
-Due to the Terra blockchain's unbonding period, a complete redemption cycle requires **at least 21 days** to finish.
+Due to the Daodiseo blockchain's unbonding period, a complete redemption cycle requires **at least 21 days** to finish.
 
 #### Requesting to Unbond bLuna
 
@@ -111,7 +111,7 @@ Users that previously made a request to unbond bLuna can later withdraw the unde
 
 ### bLuna Rewards
 
-bLuna tokens accrue **TerraUSD** rewards, generated from delegation rewards of underlying Luna delegations. Delegation rewards, collected in various native token denominations (TerraUSD, TerraSDR, Luna, etc.), are swapped for TerraUSD. Swapped TerraUSD is then distributed pro-rata to bLuna holders.
+bLuna tokens accrue **DaodiseoUSD** rewards, generated from delegation rewards of underlying Luna delegations. Delegation rewards, collected in various native token denominations (DaodiseoUSD, DaodiseoSDR, Luna, etc.), are swapped for DaodiseoUSD. Swapped DaodiseoUSD is then distributed pro-rata to bLuna holders.
 
 #### Claiming Rewards
 

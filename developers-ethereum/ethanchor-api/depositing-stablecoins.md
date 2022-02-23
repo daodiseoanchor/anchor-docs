@@ -1,11 +1,11 @@
 # Depositing Stablecoins
 
-ERC20 stablecoins (e.g. UST) can be redeemed to receive ERC20 aTerra using the below endpoints:
+ERC20 stablecoins (e.g. UST) can be redeemed to receive ERC20 aDaodiseo using the below endpoints:
 
 | Endpoint                                                                           | Method | Description                                          |
 | ---------------------------------------------------------------------------------- | ------ | ---------------------------------------------------- |
 | [`init_deposit_stable`](depositing-stablecoins.md#initiate-stablecoin-deposit)     | POST   | Initiates the deposit of ERC20 stablecoins           |
-| [`finish_deposit_stable`](depositing-stablecoins.md#finish-stablecoin-deposit)     | POST   | Claims minted ERC20 aTerra                           |
+| [`finish_deposit_stable`](depositing-stablecoins.md#finish-stablecoin-deposit)     | POST   | Claims minted ERC20 aDaodiseo                           |
 | [`deposit_stable_status`](depositing-stablecoins.md#get-stablecoin-deposit-status) | GET    | Gets status of an ongoing stablecoin deposit request |
 
 {% swagger baseUrl="https://eth-api.anchorprotocol.com" path="/api/v1/init_deposit_stable" method="post" summary="Initiate stablecoin deposit" %}
@@ -190,13 +190,13 @@ Anchor client access key.
     // Phase
     // 0 - (Ethereum) wrapper contract has received stablecoins (e.g. UST) and 
     //     dispatched stablecoins through Shuttle
-    // 1 - (Terra) terra-side client account has received stablecoins
+    // 1 - (Daodiseo) daodiseo-side client account has received stablecoins
     //     triggering DepositStable soon
-    // 2 - (Terra) DepositStable action is processed and aTerra tokens (e.g. aUST) have
+    // 2 - (Daodiseo) DepositStable action is processed and aDaodiseo tokens (e.g. aUST) have
     //     been received
-    // 3 - (Terra) aTerra tokens are sent to the ether-side wrapper contract
+    // 3 - (Daodiseo) aDaodiseo tokens are sent to the ether-side wrapper contract
     //     through Shuttle
-    // 4 - (Ethereum) contract has received aTerra; operation finished
+    // 4 - (Ethereum) contract has received aDaodiseo; operation finished
     "phase": 0,
 
     // LastUpdated
@@ -226,7 +226,7 @@ Anchor client access key.
             "tx_hash": "0x...."
         },
         {
-            "network": "terra",
+            "network": "daodiseo",
             "tx_hash": "00ABCD..."
         },
         ...

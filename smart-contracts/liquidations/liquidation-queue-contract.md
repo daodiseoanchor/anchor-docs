@@ -1,8 +1,8 @@
 # Liquidation Queue Contract
 
-The Liquidation contract enables users to submit Terra stablecoin bids for a Cw20-compliant token. Bidders can submit a bid to one of the bid pools; each of the pools deposited funds are used to buy the liquidated collateral at different discount rates. There are 31 slots per collateral, from 0% to 30%; users can bid on one or more slots.
+The Liquidation contract enables users to submit Daodiseo stablecoin bids for a Cw20-compliant token. Bidders can submit a bid to one of the bid pools; each of the pools deposited funds are used to buy the liquidated collateral at different discount rates. There are 31 slots per collateral, from 0% to 30%; users can bid on one or more slots.
 
-Upon execution of a bid, Cw20 tokens are sent to the bidder, while the bidder's Terra stablecoins are sent to the repay address (if not specified, sent to message sender). A portion of the collateral value liquidated will be given to the address triggering the liquidation (`liquidator_fee`).
+Upon execution of a bid, Cw20 tokens are sent to the bidder, while the bidder's Daodiseo stablecoins are sent to the repay address (if not specified, sent to message sender). A portion of the collateral value liquidated will be given to the address triggering the liquidation (`liquidator_fee`).
 
 Bids are consumed from the bid pools in increasing order of premium rate (e.g 2% bids are only consumed after 0% and 1% pools are emptied). The liquidated collateral is then distributed to the bidders in the affected pools in proportion to their bid amount. The respective collateral should be claimed by the bidders.
 
@@ -51,8 +51,8 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1..", 
-  "oracle_contract": "terra1...", 
+  "owner": "daodiseo1..", 
+  "oracle_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "safe_ratio": "0.8", 
   "bid_fee": "0.01", 
@@ -60,7 +60,7 @@ pub struct InstantiateMsg {
   "liquidation_threshold": "500", 
   "price_timeframe": 60,
   "waiting_period": 600,
-  "overseer": "terra1..."
+  "overseer": "daodiseo1..."
 }
 ```
 {% endtab %}
@@ -104,7 +104,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "receive": {
-    "sender": "terra1...", 
+    "sender": "daodiseo1...", 
     "amount": "10000000", 
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9" 
   }
@@ -148,15 +148,15 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1...", 
-    "oracle_contract": "terra1...", 
+    "owner": "daodiseo1...", 
+    "oracle_contract": "daodiseo1...", 
     "safe_ratio": "0.8", 
     "bid_fee": "0.01", 
     "liquidator_fee": "0.01",
     "liquidation_threshold": "200000000", 
     "price_timeframe": 60,
     "waiting_period": 600,
-    "overseer": "terra1..."
+    "overseer": "daodiseo1..."
   }
 }
 ```
@@ -201,7 +201,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "whitelist_collateral": {
-    "collateral_token": "terra1...", 
+    "collateral_token": "daodiseo1...", 
     "bid_threshold": "200000000", 
     "max_slot": 30,
     "premium_rate_per_slot": "0.01",
@@ -241,7 +241,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "whitelist_collateral": {
-    "collateral_token": "terra1...", 
+    "collateral_token": "daodiseo1...", 
     "bid_threshold": "200000000", 
     "max_slot": 30,
   }
@@ -260,7 +260,7 @@ pub enum ExecuteMsg {
 
 ### `SubmitBid`
 
-Submits a new bid for the specified Cw20 collateral to the specified premium slot. Requires Terra stablecoins to be sent beforehand. The premium rate on each slot can be calculated using the whitelisted collateral configuration (`premium_slot * premium_rate_per_slot`).
+Submits a new bid for the specified Cw20 collateral to the specified premium slot. Requires Daodiseo stablecoins to be sent beforehand. The premium rate on each slot can be calculated using the whitelisted collateral configuration (`premium_slot * premium_rate_per_slot`).
 
 {% tabs %}
 {% tab title="Rust" %}
@@ -280,7 +280,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "submit_bid": {
-    "collateral_token": "terra1...", 
+    "collateral_token": "daodiseo1...", 
     "premium_slot": 3
   }
 }
@@ -315,7 +315,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "activate_bids": {
-    "collateral_token": "terra1...",
+    "collateral_token": "daodiseo1...",
     "bids_idx": ["123","231"], 
   }
 }
@@ -389,7 +389,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "claim_liquidations": {
-    "collateral_token": "terra1...",
+    "collateral_token": "daodiseo1...",
     "bids_idx": ["123","231"],  
   }
 }
@@ -429,9 +429,9 @@ pub enum Cw20HookMsg {
 ```javascript
 {
   "execute_bid": {
-    "liquidator": "terra1...", 
-    "fee_address": "terra1...", // Filled as Overseer contract's address
-    "repay_address": "terra1..." // Filled as Market contract's address
+    "liquidator": "daodiseo1...", 
+    "fee_address": "daodiseo1...", // Filled as Overseer contract's address
+    "repay_address": "daodiseo1..." // Filled as Market contract's address
   }
 }
 ```
@@ -496,8 +496,8 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
-  "oracle_contract": "terra1...", 
+  "owner": "daodiseo1...", 
+  "oracle_contract": "daodiseo1...", 
   "stable_denom": "uusd", 
   "safe_ratio": "0.8", 
   "bid_fee": "0.01",
@@ -505,7 +505,7 @@ pub struct ConfigResponse {
   "liquidation_threshold": "200000000", 
   "price_timeframe": 60,
   "waiting_period": 600,
-  "overseer": "terra1..."
+  "overseer": "daodiseo1..."
 }
 ```
 {% endtab %}
@@ -545,7 +545,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "collateral_info": {
-      "collateral_token": "terra1..."
+      "collateral_token": "daodiseo1..."
   }
 }
 ```
@@ -574,7 +574,7 @@ pub struct CollateralInfoResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "collateral_token": "terra1...", 
+  "collateral_token": "daodiseo1...", 
   "bid_threshold": "5000000000000",
   "max_slot": 30,
   "premium_rate_per_slot": "0.01"
@@ -619,8 +619,8 @@ pub type TokensHuman = Vec<(String, Uint256)>;
     "borrow_amount": "10000000", 
     "borrow_limit": "10000000", 
     "collaterals": [
-      ["terra1...", "100000000"], // (Cw20 contract address, Locked amount)
-      ["terra1...", "100000000"] 
+      ["daodiseo1...", "100000000"], // (Cw20 contract address, Locked amount)
+      ["daodiseo1...", "100000000"] 
     ], 
     "collateral_prices": [
       "123.456789", // Price of collateral
@@ -661,8 +661,8 @@ pub type TokensHuman = Vec<(String, Uint256)>;
 ```javascript
 {
   "collaterals": [
-    ["terra1...", "100000000"], // (Cw20 Token address, Required liquidation amount to reach safe_ratio)
-    ["terra1...", "100000000"] 
+    ["daodiseo1...", "100000000"], // (Cw20 Token address, Required liquidation amount to reach safe_ratio)
+    ["daodiseo1...", "100000000"] 
   ] 
 }
 ```
@@ -735,9 +735,9 @@ pub struct BidResponse {
 ```javascript
 {
   "idx": "123",
-  "collateral_token": "terra1...", 
+  "collateral_token": "daodiseo1...", 
   "premium_slot": "10",
-  "bidder": "terra1...", 
+  "bidder": "daodiseo1...", 
   "amount": "100000000", 
   "product_snapshot": "1.0",
   "sum_snapshot": "1.0",
@@ -788,8 +788,8 @@ pub enum QueryMsg {
 ```javascript
 {
   "bids_by_user": {
-    "collateral_token": "terra1...",
-    "bidder": "terra1...", 
+    "collateral_token": "daodiseo1...",
+    "bidder": "daodiseo1...", 
     "start_after": "123", 
     "limit": 8 
   }
@@ -836,9 +836,9 @@ pub struct BidResponse {
   "bids": [
     {
       "idx": "12",
-      "collateral_token": "terra1...", 
+      "collateral_token": "daodiseo1...", 
       "premium_slot": "10",
-      "bidder": "terra1...", 
+      "bidder": "daodiseo1...", 
       "amount": "100000000", 
       "product_snapshot": "1.0",
       "sum_snapshot": "1.0",
@@ -849,9 +849,9 @@ pub struct BidResponse {
     }, 
     {
       "idx": "26",
-      "collateral_token": "terra1...", 
+      "collateral_token": "daodiseo1...", 
       "premium_slot": "11",
-      "bidder": "terra1...", 
+      "bidder": "daodiseo1...", 
       "amount": "200000000", 
       "product_snapshot": "1.0",
       "sum_snapshot": "1.0",
@@ -906,7 +906,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "bid_pool": {
-    "collateral_token": "terra1...",
+    "collateral_token": "daodiseo1...",
     "bid_slot": 10, 
   }
 }
@@ -982,7 +982,7 @@ pub enum QueryMsg {
 ```javascript
 {
   "bid_pools_by_collateral": {
-    "collateral_token": "terra1...", 
+    "collateral_token": "daodiseo1...", 
     "start_after": 1, 
     "limit": 10 
   }

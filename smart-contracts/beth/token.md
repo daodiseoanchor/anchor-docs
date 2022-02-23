@@ -76,10 +76,10 @@ pub struct TokenInstantiateMsg {
   "decimals": 6, 
   "total_supply": "100000000", 
   "mint": {
-    "minter": "terra1...", 
+    "minter": "daodiseo1...", 
     "cap": "1000000000" 
   }, 
-  "reward_contract": "terra1..." 
+  "reward_contract": "daodiseo1..." 
 }
 ```
 {% endtab %}
@@ -120,7 +120,7 @@ pub enum Cw20ExecuteMsg {
 ```javascript
 {
   "transfer": {
-    "recipient": "terra1...", 
+    "recipient": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -188,7 +188,7 @@ pub enum Cw20ExecuteMsg {
 ```javascript
 {
   "send": {
-    "contract": "terra1...", 
+    "contract": "daodiseo1...", 
     "amount": "100000000", 
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9"
   }
@@ -225,7 +225,7 @@ pub enum Cw20ExecuteMsg {
 ```javascript
 {
   "mint": {
-    "recipient": "terra1...", 
+    "recipient": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -269,7 +269,7 @@ pub enum Expiration {
 ```javascript
 {
   "increase_allowance": {
-    "spender": "terra1...", 
+    "spender": "daodiseo1...", 
     "amount": "100000000", 
     "expires": {
       "at_height": 123123,
@@ -329,7 +329,7 @@ pub enum Expiration {
 ```javascript
 {
   "decrease_allowance": {
-    "spender": "terra1...", 
+    "spender": "daodiseo1...", 
     "amount": "100000000", 
     "expires": {
       "at_height": 123123,
@@ -379,8 +379,8 @@ pub enum Cw20ExecuteMsg {
 ```javascript
 {
   "transfer_from": {
-    "owner": "terra1...", 
-    "recipient": "terra1...", 
+    "owner": "daodiseo1...", 
+    "recipient": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -418,8 +418,8 @@ pub enum Cw20ExecuteMsg {
 ```javascript
 {
   "send_from": {
-    "owner": "terra1...", 
-    "contract": "terra1...", 
+    "owner": "daodiseo1...", 
+    "contract": "daodiseo1...", 
     "amount": "100000000", 
     "msg": "eyAiZXhlY3V0ZV9tc2ciOiAiYmluYXJ5IiB9", 
   }
@@ -457,7 +457,7 @@ pub enum Cw20ExecuteMsg {
 ```javascript
 {
   "burn_from": {
-    "owner": "terra1...", 
+    "owner": "daodiseo1...", 
     "amount": "100000000" 
   }
 }
@@ -514,7 +514,7 @@ pub struct BalanceResponse {
 ```rust
 {
   "balance": {
-    "address": "terra1..." 
+    "address": "daodiseo1..." 
   }
 }
 ```
@@ -663,7 +663,7 @@ pub struct MinterResponse {
 
 ```rust
 {
-  "minter": "terra1...", 
+  "minter": "daodiseo1...", 
   "cap": "1000000000" 
 }
 ```
@@ -735,8 +735,8 @@ pub enum Expiration {
 ```rust
 {
   "allowance": {
-    "owner": "terra1...", 
-    "spender": "terra1..." 
+    "owner": "daodiseo1...", 
+    "spender": "daodiseo1..." 
   }
 }
 ```
@@ -849,8 +849,8 @@ pub enum Expiration {
 ```rust
 {
   "all_allowances": {
-    "owner": "terra1...", 
-    "start_from": "terra1...", 
+    "owner": "daodiseo1...", 
+    "start_from": "daodiseo1...", 
     "limit": 10
   }
 }
@@ -870,7 +870,7 @@ pub enum Expiration {
 {
   "allowances": [
     {
-      "spender": "terra1...", 
+      "spender": "daodiseo1...", 
       "allowance": "100000000", 
       "expires": {
         "at_height": 123123,
@@ -881,7 +881,7 @@ pub enum Expiration {
       }
     }, 
     {
-      "spender": "terra1...", 
+      "spender": "daodiseo1...", 
       "allowance": "100000000", 
       "expires": {
         "at_height": 123123,
@@ -959,7 +959,7 @@ pub struct AllAccountsResponse {
 ```rust
 {
   "all_accounts": {
-    "start_after": "terra1...", 
+    "start_after": "daodiseo1...", 
     "limit": 8 
   }
 }
@@ -977,9 +977,9 @@ pub struct AllAccountsResponse {
 ```rust
 {
   "accounts": [
-    "terra1...", 
-    "terra1...", 
-    "terra1..." 
+    "daodiseo1...", 
+    "daodiseo1...", 
+    "daodiseo1..." 
   ]
 }
 ```

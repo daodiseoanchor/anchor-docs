@@ -31,7 +31,7 @@ pub struct InstantiateMsg {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "emission_cap": "10000", 
   "emission_floor": "1000", 
   "increment_multiplier": "2.0", 
@@ -76,7 +76,7 @@ pub enum ExecuteMsg {
 ```javascript
 {
   "update_config": {
-    "owner": "terra1...", 
+    "owner": "daodiseo1...", 
     "emission_cap": "10000", 
     "emission_floor": "1000", 
     "increment_multiplier": "2.0", 
@@ -146,7 +146,7 @@ pub struct ConfigResponse {
 {% tab title="JSON" %}
 ```javascript
 {
-  "owner": "terra1...", 
+  "owner": "daodiseo1...", 
   "emission_cap": "10000", 
   "emission_floor": "1000", 
   "increment_multiplier": "2.0", 
